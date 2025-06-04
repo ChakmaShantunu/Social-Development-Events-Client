@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import { button } from 'motion/react-client';
 
 const Navbar = () => {
+
+    const { user } = use(AuthContext);
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -20,7 +24,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"><img  alt="" /> daisyUI</a>
+                <a className="btn btn-ghost text-xl"><img alt="" /> daisyUI</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,8 +33,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-2">
 
-                <NavLink to='/register' className="btn">Register</NavLink>
-                <NavLink to='/signin' className="btn">SignIn</NavLink>
+                {
+                    user ? <button className='btn'>Sign Out</button> : <>
+                        <NavLink to='/register' className="btn">Register</NavLink>
+                        <NavLink to='/signin' className="btn">SignIn</NavLink>
+                    </>
+                }
+
+
             </div>
         </div >
     );
