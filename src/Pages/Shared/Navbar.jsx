@@ -2,10 +2,29 @@ import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import { button } from 'motion/react-client';
+import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
 
-    const { user } = use(AuthContext);
+    const { user, signOutUser } = use(AuthContext);
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                console.log('sign out user');
+                toast('Sign out Successful')
+            })
+            .catch(error => {
+                console.log(error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops.. Sign Out failed!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+    }
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -34,7 +53,7 @@ const Navbar = () => {
             <div className="navbar-end gap-2">
 
                 {
-                    user ? <button className='btn'>Sign Out</button> : <>
+                    user ? <button onClick={handleSignOut} className='btn'>Sign Out</button> : <>
                         <NavLink to='/register' className="btn">Register</NavLink>
                         <NavLink to='/signin' className="btn">SignIn</NavLink>
                     </>

@@ -26,7 +26,7 @@ const SignIn = () => {
                 console.log(currentUser);
                 currentUser.reload().then(() => {
                     console.log(currentUser.displayName, currentUser.photoURL);
-                    toast.success("Logged in Successful")
+                    toast.success("Sign in Successful")
                 })
             })
             .catch(error => {
