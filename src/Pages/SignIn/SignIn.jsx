@@ -7,6 +7,7 @@ import signinLottie2 from '../../assets/lotties/signinlottie2.json'
 import { easeInOut, motion } from "motion/react"
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import { toast } from 'react-toastify';
+import SocialLogIn from '../Shared/SocialLogIn';
 
 const SignIn = () => {
 
@@ -41,6 +42,7 @@ const SignIn = () => {
             })
 
     }
+
     return (
         <div className='flex flex-col md:flex-row lg:flex-row items-center justify-center mx-auto'>
             <div>
@@ -62,7 +64,7 @@ const SignIn = () => {
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                     </form>
                     <p>New to this website? Please <Link className='underline' to='/register'>Register</Link></p>
-
+                    <SocialLogIn></SocialLogIn>
                 </div>
             </motion.div>
             <div>
