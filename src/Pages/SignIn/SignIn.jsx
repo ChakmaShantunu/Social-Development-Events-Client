@@ -1,18 +1,44 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
 import signinbg from '../../assets/Signin/signin-bg.jpg'
 import Lottie from 'lottie-react';
 import signinLottie from '../../assets/lotties/signinlottie.json'
 import signinLottie2 from '../../assets/lotties/signinlottie2.json'
 import { easeInOut, motion } from "motion/react"
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
+
+    const { signInUser } = use(AuthContext);
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        //sign in user
+
+        signInUser(email, password)
+            .then(result => {
+                const currentUser = result.user;
+                console.log(currentUser);
+                currentUser.reload().then(() => {
+                    console.log(currentUser.displayName, currentUser.photoURL);
+                    toast.success("Logged in Successful")
+                })
+            })
+            .catch(error => {
+                console.log(error);
+                if (error.code === "auth/invalid-credential") {
+                    toast.error("You have entered email or wrong password")
+                } else if (error.code === "auth/user-not-found") {
+                    toast.error("User not found")
+                } else {
+                    toast.error("Login Error:" + error.message)
+                }
+            })
 
     }
     return (
