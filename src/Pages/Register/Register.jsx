@@ -1,12 +1,17 @@
 import Lottie from 'lottie-react';
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use } from 'react';
+import { Link, useNavigate } from 'react-router';
 import registerLottie from '../../assets/lotties/registerLottie.json'
 import registerLottie2 from '../../assets/lotties/registerLottie2.json'
 import registerbg from '../../assets/Register/register-bg.jpg'
 import { easeInOut, motion } from "motion/react"
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+
+    const navigate = useNavigate();
+    const { createUser } = use(AuthContext);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -16,6 +21,26 @@ const Register = () => {
         const photoUrl = form.photo.value;
         const password = form.password.value;
         console.log(name, email, photoUrl, password)
+
+        //create user
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                if (result.user.accessToken) {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Register Successful",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+                navigate('/');
+            })
+            .then(error => {
+                console.log(error);
+            })
     }
     return (
         <div className='flex flex-col md:flex-row lg:flex-row items-center justify-between mx-auto'>
