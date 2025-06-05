@@ -8,18 +8,7 @@ const Home = () => {
 
     const { loading } = use(AuthContext);
 
-    const [events, setEvents] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:3000/events')
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }, [])
+    
 
     if (loading) {
         return <Loading></Loading>
@@ -27,7 +16,6 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <UpcomingEvents events={events}></UpcomingEvents>
         </div>
     );
 };

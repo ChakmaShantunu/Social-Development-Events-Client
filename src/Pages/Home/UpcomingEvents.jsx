@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import EventCard from '../Shared/EventCard';
 import { AnimatePresence, motion } from "framer-motion";
 import { div } from 'framer-motion/client';
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import Loading from '../../components/Loader/Loading';
 
-const UpcomingEvents = ({ events }) => {
+const UpcomingEvents = () => {
+
+    const { loading } = use(AuthContext);
+
+    const [events, setEvents] = useState([])
 
     const [showAll, setShowAll] = useState(false);
     const displayEvents = showAll ? events : events.slice(0, 8)
+
+    useEffect(() => {
+        fetch('http://localhost:3000/events')
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }, [])
+
+    if(loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <motion.div
@@ -14,7 +35,7 @@ const UpcomingEvents = ({ events }) => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 2, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}
-            className='my-24'>
+            className='my-12'>
             <div className='text-center space-y-4'>
                 <h1 className='text-6xl'>Upcoming Events</h1>
                 <p>Explore today’s featured events and get involved in meaningful social development activities. Discover the events scheduled for today. Don’t miss out—stay updated and involved!</p>
