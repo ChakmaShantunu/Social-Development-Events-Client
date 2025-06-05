@@ -37,7 +37,7 @@ const EventCard = ({ event }) => {
                     <Link to={`/eventDetails/${_id}`}><motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="btn btn-primary">Show Details</motion.button></Link>
+                        className="btn btn-primary">View Event</motion.button></Link>
                 </div>
             </div>
         </div>

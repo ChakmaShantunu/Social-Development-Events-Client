@@ -21,7 +21,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/eventDetails/:id',
-                Component: EventDetails
+                Component: EventDetails,
+                loader: ({ params }) => fetch(`http://localhost:3000/eventDetails/${params.id}`)
             },
             {
                 path: 'register',

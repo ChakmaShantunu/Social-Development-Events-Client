@@ -36,7 +36,7 @@ const UpcomingEvents = () => {
         <motion.div
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 2, type: 'spring', stiffness: 80, damping: 10 }}
+            transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}
             className='my-12'>
             <div className='text-center space-y-4'>
