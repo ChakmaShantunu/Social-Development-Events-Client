@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import EventCard from '../Shared/EventCard';
 import { AnimatePresence, motion } from "framer-motion";
 import { div } from 'framer-motion/client';
@@ -7,12 +7,15 @@ import Loading from '../../components/Loader/Loading';
 
 const UpcomingEvents = () => {
 
-    const { loading } = use(AuthContext);
+    const { loading } = useContext(AuthContext);
 
     const [events, setEvents] = useState([])
+    const today = new Date();
+
+    const upcomingEvents = events.filter(event => new Date(event.eventDate) >= today);
 
     const [showAll, setShowAll] = useState(false);
-    const displayEvents = showAll ? events : events.slice(0, 8)
+    const displayEvents = showAll ? upcomingEvents : upcomingEvents.slice(0, 8)
 
     useEffect(() => {
         fetch('http://localhost:3000/events')

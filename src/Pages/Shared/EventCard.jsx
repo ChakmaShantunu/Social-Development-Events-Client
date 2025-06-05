@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
 import { motion } from "motion/react"
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 
 const EventCard = ({ event }) => {
+    const { user } = use(AuthContext);
 
-    const { title, description, thumbnailUrl, location, maxParticipants, eventDate } = event
+    const { title, description, thumbnailUrl, location, maxParticipants, eventDate, eventType, _id } = event
     return (
         <div className="card bg-base-100 w-96 shadow-sm h-full">
             <div className='flex justify-center gap-2'>
@@ -28,10 +30,11 @@ const EventCard = ({ event }) => {
                 <p>{description}</p>
                 <div className="card-actions">
                     <p>Participants : {maxParticipants}</p>
+                    <p>Type : <span className='font-bold'>{eventType}</span></p>
 
                 </div>
                 <div className="card-actions justify-end">
-                    <Link><motion.button
+                    <Link to={`/eventDetails/${_id}`}><motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         className="btn btn-primary">Show Details</motion.button></Link>
