@@ -8,6 +8,7 @@ import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import Swal from 'sweetalert2';
 import SocialLogIn from '../Shared/SocialLogIn';
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -32,12 +33,13 @@ const Register = () => {
                 console.log(user);
                 updateUser({ displayName: name, photoURL: photo }).then(() => {
                     setUser({ ...user, displayName: name, photoURL: photo })
+                    toast.success('Registered Successfully');
                     navigate('/');
                 })
-                .catch(error => {
-                    console.log(error);
-                    setUser(user)
-                })
+                    .catch(error => {
+                        console.log(error);
+                        setUser(user)
+                    })
                 // if (result.user.accessToken) {
                 //     Swal.fire({
                 //         position: "center",
@@ -47,7 +49,7 @@ const Register = () => {
                 //         timer: 1500
                 //     });
                 // }
-                
+
             })
             .then(error => {
                 console.log(error);

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { use } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router';
 import { IoCheckbox } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
@@ -7,7 +7,7 @@ import Loading from '../../components/Loader/Loading';
 
 const EventDetails = () => {
 
-    const { loading } = useContext(AuthContext);
+    const { loading } = use(AuthContext);
 
     if (loading) {
         return <Loading></Loading>
