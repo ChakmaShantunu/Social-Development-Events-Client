@@ -28,7 +28,7 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Upcoming Events</NavLink></li>
+        <li><NavLink to='/upcomingEvents'>Upcoming Events</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
