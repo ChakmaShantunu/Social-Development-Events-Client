@@ -1,5 +1,4 @@
 import Lottie from 'lottie-react';
-import React, { use } from 'react';
 import { Link, useNavigate } from 'react-router';
 import registerLottie from '../../assets/lotties/registerLottie.json'
 import registerLottie2 from '../../assets/lotties/registerLottie2.json'
@@ -8,55 +7,47 @@ import { easeInOut, motion } from "motion/react"
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import Swal from 'sweetalert2';
 import SocialLogIn from '../Shared/SocialLogIn';
+import { useContext } from 'react';
 
 const Register = () => {
 
     const navigate = useNavigate();
-    const { createUser } = use(AuthContext);
+    const { createUser, updateUser, setUser } = useContext(AuthContext);
+
+
 
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
-        const photoUrl = form.photo.value;
+        const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, photoUrl, password)
-
-        // const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-
-        // if (regex.test(password)) {
-        //     alert("valid password")
-        // }
-        // else {
-        //     alert("Password must contain at least one capital letter, one smaller and a number")
-        // }
-
-        // if (!name || !email || !password) {
-        //     alert("Please fill in all fields")
-        //     return;
-        // }
-
-        // if (password.length < 6) {
-        //     alert("Password must be at least 6 characters")
-        //     return;
-        // }
+        console.log(name, email, photo, password)
 
         //create user
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                if (result.user.accessToken) {
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Register Successful",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                }
-                navigate('/');
+                updateUser({ displayName: name, photoURL: photo }).then(() => {
+                    setUser({ ...user, displayName: name, photoURL: photo })
+                    navigate('/');
+                })
+                .catch(error => {
+                    console.log(error);
+                    setUser(user)
+                })
+                // if (result.user.accessToken) {
+                //     Swal.fire({
+                //         position: "center",
+                //         icon: "success",
+                //         title: "Register Successful",
+                //         showConfirmButton: false,
+                //         timer: 1500
+                //     });
+                // }
+                
             })
             .then(error => {
                 console.log(error);

@@ -17,6 +17,8 @@ const SignIn = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state || '/';
+
+
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
@@ -28,14 +30,14 @@ const SignIn = () => {
 
         signInUser(email, password)
             .then(result => {
-
                 const currentUser = result.user;
                 console.log(currentUser);
                 currentUser.reload().then(() => {
                     console.log(currentUser.displayName, currentUser.photoURL);
                     toast.success("Sign in Successful");
+                    navigate(from);
                 })
-                navigate(from);
+
 
             })
             .catch(error => {

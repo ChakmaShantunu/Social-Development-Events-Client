@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
                         uid: currentUser.uid,
                         email: currentUser.email,
                         displayName: currentUser.displayName,
-                        photoURL: currentUser.photoURL
+                        photoURL: currentUser.photoURL,
                     })
                     setLoading(false)
                 })
