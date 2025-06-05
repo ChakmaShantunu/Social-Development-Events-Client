@@ -1,13 +1,16 @@
-import React, { use } from 'react';
+
 import { NavLink } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import { button } from 'motion/react-client';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
+import { motion } from "motion/react"
+import Profile from '../../components/Profile/Profile';
+import { useContext } from 'react';
 
 const Navbar = () => {
 
-    const { user, signOutUser } = use(AuthContext);
+    const { user, signOutUser } = useContext(AuthContext);
 
     const handleSignOut = () => {
         signOutUser()
@@ -51,9 +54,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-
                 {
-                    user ? <button onClick={handleSignOut} className='btn'>Sign Out</button> : <>
+                    user ? <>
+                        <motion.button
+                            whileTap={{ scale: 0.95 }}
+                            onClick={handleSignOut} className='btn'>Sign Out</motion.button>
+                        <Profile></Profile>
+                    </> : <>
                         <NavLink to='/register' className="btn">Register</NavLink>
                         <NavLink to='/signin' className="btn">SignIn</NavLink>
                     </>

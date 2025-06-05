@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { auth } from '../../Firebase/firebase.init';
 import { ToastContainer } from 'react-toastify';
 
@@ -33,11 +33,27 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    const updateUser = (updatedData) => {
+        return updateProfile(auth.currentUser, updatedData);
+    }
+
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            setLoading(false);
-            console.log('user in the auth state', currentUser)
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+                currentUser.reload().then(() => {
+                    setUser({
+                        uid: currentUser.uid,
+                        email: currentUser.email,
+                        displayName: currentUser.displayName,
+                        photoURL: currentUser.photoURL
+                    })
+                    setLoading(false)
+                })
+            } else {
+                setUser(null)
+                setLoading(false)
+            }
+            console.log(currentUser);
         })
         return () => {
             unSubscribe();
@@ -47,16 +63,18 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         user,
+        setUser,
         loading,
         createUser,
         signInUser,
         googleSignIn,
-        signOutUser
+        signOutUser,
+        updateUser
     }
     return <div>
-        <AuthContext value={authInfo}>
+        <AuthContext.Provider value={authInfo}>
             {children}
-        </AuthContext>
+        </AuthContext.Provider>
         <ToastContainer></ToastContainer>
     </div>;
 };
