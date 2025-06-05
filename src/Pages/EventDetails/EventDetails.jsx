@@ -9,7 +9,7 @@ const EventDetails = () => {
 
     const { loading } = useContext(AuthContext);
 
-    if(loading) {
+    if (loading) {
         return <Loading></Loading>
     }
 
@@ -19,7 +19,7 @@ const EventDetails = () => {
         navigate(-1);
     }
 
-    const { thumbnailUrl, title, description, maxParticipants, eventDate, location, eventType } = useLoaderData();
+    const { thumbnailUrl, title, description, maxParticipants, eventDate, location, eventType, _id } = useLoaderData();
     return (
         <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -47,7 +47,7 @@ const EventDetails = () => {
                     <li className='flex items-center gap-2'><IoCheckbox /> Collect feedback and analyze event success for improvements</li>
                 </ul>
                 <div className="card-actions mt-4">
-                    <button className="btn btn-outline">Join Event</button>
+                    <Link to={`/joinEvent/${_id}`}><button className="btn btn-outline">Join Event</button></Link>
                     <Link><button onClick={handleBack} className="btn btn-outline">Back</button></Link>
                 </div>
             </div>

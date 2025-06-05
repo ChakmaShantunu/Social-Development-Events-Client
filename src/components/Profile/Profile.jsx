@@ -18,14 +18,14 @@ const Profile = () => {
                     tabIndex={0}
                     className="menu dropdown-content bg-base-100 rounded-box z-10 mt-2 w-52 p-2 shadow-sm">
                     <li>
-                        <Link>Create Job</Link>
+                        <Link>Create Events</Link>
                     </li>
                     <li>
-                        <Link>Manage Jobs</Link>
+                        <Link>Manage Events</Link>
                     </li>
                     <li>
                         {/* <Link to={`/jobApply/${user.id}`}>Applied Jobs</Link> */}
-                        <Link>Applied Jobs</Link>
+                        <Link to='/joinEvent'>Applied Events</Link>
                     </li>
                 </ul>
             </div>

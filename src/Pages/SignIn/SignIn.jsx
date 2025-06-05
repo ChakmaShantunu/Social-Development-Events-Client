@@ -1,5 +1,5 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import signinbg from '../../assets/Signin/signin-bg.jpg'
 import Lottie from 'lottie-react';
 import signinLottie from '../../assets/lotties/signinlottie.json'
@@ -11,7 +11,12 @@ import SocialLogIn from '../Shared/SocialLogIn';
 
 const SignIn = () => {
 
+
+
     const { signInUser } = use(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state || '/';
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
@@ -23,12 +28,15 @@ const SignIn = () => {
 
         signInUser(email, password)
             .then(result => {
+
                 const currentUser = result.user;
                 console.log(currentUser);
                 currentUser.reload().then(() => {
                     console.log(currentUser.displayName, currentUser.photoURL);
-                    toast.success("Sign in Successful")
+                    toast.success("Sign in Successful");
                 })
+                navigate(from);
+
             })
             .catch(error => {
                 console.log(error);
@@ -64,7 +72,7 @@ const SignIn = () => {
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                     </form>
                     <p>New to this website? Please <Link className='underline' to='/register'>Register</Link></p>
-                    <SocialLogIn></SocialLogIn>
+                    <SocialLogIn from={from}></SocialLogIn>
                 </div>
             </motion.div>
             <div>
