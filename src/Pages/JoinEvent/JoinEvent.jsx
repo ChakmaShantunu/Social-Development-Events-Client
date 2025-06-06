@@ -1,12 +1,26 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import axios from 'axios';
+import { title } from 'framer-motion/client';
 
 const JoinEvent = () => {
 
-    const { id: eventId } = useParams();
+    const { id } = useParams();
+    const [event, setEvent] = useState(null);
     const { user } = use(AuthContext);
-    console.log(eventId, user);
+    console.log(id, user);
+
+    useEffect(() => {
+        axios.get(`http://localhost:3000/eventdetails/${id}`)
+            .then(res => {
+                console.log(res.data);
+                setEvent(res.data)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }, [id])
 
     const handleJoinFormSubmit = e => {
         e.preventDefault();
@@ -17,20 +31,32 @@ const JoinEvent = () => {
 
         // const regex = /^(01)[3-9]\d{8}$/;
 
+        const participant = {
+            ...newTask,
+            applicant: user.email,
+            eventId: id,
+            eventTitle: event.title,
+            eventDate: event.eventDate,
+            joinedData: new Date(),
+        }
 
-        // const application = {
-        //     eventId,
-        //     applicant: user.email,
-        //     linkedin,
-        //     github,
-        //     resume
-        // }
+        console.log(participant);
+
+        // send db the info
+
+        axios.post('http://localhost:3000/participants', participant)
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
 
     return (
         <div className='my-24'>
-            <h3 className="text-3xl mb-6">Apply for this job: <Link to={`/eventDetails/${eventId}`}>Details</Link></h3>
+            <h3 className="text-3xl mb-6">Apply for this job: <Link to={`/eventDetails/${id}`}>Details</Link></h3>
             <form onSubmit={handleJoinFormSubmit}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -58,8 +84,8 @@ const JoinEvent = () => {
                         <textarea name="skills" id="" className='textarea textarea-border w-full'></textarea>
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label text-base-content font-semibold">Budget</label>
-                        <input type="text" name='budget' className="input w-full" placeholder="Enter coffee price" />
+                        <label className="label text-base-content font-semibold">Linkedin Link</label>
+                        <input type="url" name='linkedin' className="input w-full" placeholder="Enter profile link" />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label text-base-content font-semibold">Name</label>

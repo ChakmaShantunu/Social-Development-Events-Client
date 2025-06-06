@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 import { motion } from "motion/react"
+import { format } from 'date-fns';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 
@@ -26,7 +27,7 @@ const EventCard = ({ event }) => {
                     {title}
                     <div className="badge badge-secondary">NEW</div>
                 </h2>
-                <p>Date : {eventDate}</p>
+                <p>Date : {format(new Date(eventDate), 'MMMM. dd. yy')}</p>
                 <p>{description}</p>
                 <div className="card-actions">
                     <p>Participants : {maxParticipants}</p>
