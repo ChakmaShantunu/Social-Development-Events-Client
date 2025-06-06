@@ -43,7 +43,7 @@ const UpcomingEvents = () => {
                 <h1 className='text-6xl'>Upcoming Events</h1>
                 <p>Explore today’s featured events and get involved in meaningful social development activities. Discover the events scheduled for today. Don’t miss out—stay updated and involved!</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 my-24'>
+            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 my-24 mx-4'>
                 <AnimatePresence>
                     {
                         displayEvents.map(event => (<motion.div key={event._id}

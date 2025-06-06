@@ -58,7 +58,7 @@ const AddEvent = () => {
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label font-semibold">Category</label>
-                        <select name="category" id="" className='select border' required>
+                        <select name="eventType" id="" className='select border' required>
                             <option disabled selected>Choose a category</option>
                             <option value="Cleanup">Clean-up Campaign</option>
                             <option value="Plantation">Tree Plantation</option>
