@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import axios from 'axios';
 import { title } from 'framer-motion/client';
+import Swal from 'sweetalert2';
 
 const JoinEvent = () => {
 
@@ -47,6 +48,15 @@ const JoinEvent = () => {
         axios.post('http://localhost:3000/participants', participant)
             .then(res => {
                 console.log(res.data);
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your have joined the event",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
             })
             .catch(error => {
                 console.log(error);

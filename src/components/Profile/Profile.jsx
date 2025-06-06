@@ -25,7 +25,7 @@ const Profile = () => {
                     </li>
                     <li>
                         {/* <Link to={`/jobApply/${user.id}`}>Applied Jobs</Link> */}
-                        <Link to='/joinEvent'>Applied Events</Link>
+                        <Link to='/joinedEvents'>Joined Events</Link>
                     </li>
                 </ul>
             </div>

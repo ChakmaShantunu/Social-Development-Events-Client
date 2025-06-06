@@ -7,6 +7,7 @@ import UpcomingEvents from "../Pages/Home/UpcomingEvents";
 import EventDetails from "../Pages/EventDetails/EventDetails";
 import JoinEvent from "../Pages/JoinEvent/JoinEvent";
 import PrivateRoute from "../route/PrivateRoute";
+import JoinedEvents from "../Pages/JoinedEvents/JoinedEvents";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path: '/joinEvent/:id',
                 element: <PrivateRoute><JoinEvent></JoinEvent></PrivateRoute>
+            },
+            {
+                path: '/joinedEvents',
+                element: <PrivateRoute><JoinedEvents></JoinedEvents></PrivateRoute>
             },
             {
                 path: 'register',
