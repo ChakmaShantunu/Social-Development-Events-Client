@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import axios from 'axios';
 import { title } from 'framer-motion/client';
@@ -10,6 +10,7 @@ const JoinEvent = () => {
     const { id } = useParams();
     const [event, setEvent] = useState(null);
     const { user } = use(AuthContext);
+    const navigate = useNavigate();
     console.log(id, user);
 
     useEffect(() => {
@@ -56,6 +57,7 @@ const JoinEvent = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    navigate('/joinedEvents')
                 }
             })
             .catch(error => {

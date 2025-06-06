@@ -27,7 +27,7 @@ const EventCard = ({ event }) => {
                     {title}
                     <div className="badge badge-secondary">NEW</div>
                 </h2>
-                <p>Date : {format(new Date(eventDate), 'MMMM. dd. yy')}</p>
+                <p>Date : {format(new Date(eventDate), 'MMMM dd, yy')}</p>
                 <p>{description}</p>
                 <div className="card-actions">
                     <p>Participants : {maxParticipants}</p>

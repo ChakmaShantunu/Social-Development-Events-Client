@@ -20,10 +20,9 @@ const EventsList = ({ myJoinedEventsPromise }) => {
                                             <th>
                                                 No.
                                             </th>
-                                            <th>Name</th>
-                                            <th>Title</th>
+                                            <th>Name & Email</th>
+                                            <th>Event Title</th>
                                             <th>Phone</th>
-                                            <th>Category</th>
                                             <th>Address</th>
                                             <th>Event Date</th>
                                             <th>Join Date</th>
@@ -52,9 +51,6 @@ const EventsList = ({ myJoinedEventsPromise }) => {
                                                     <br />
                                                     {/* <span className="badge badge-ghost badge-sm">Desktop Support Technician</span> */}
                                                 </td>
-                                                <td>
-                                                    {event.category}
-                                                </td>
                                                 {/* <td>
                                                     <button className="btn hover:bg-green-200"><FaGavel size={20} /></button>
                                                 </td> */}
@@ -62,10 +58,10 @@ const EventsList = ({ myJoinedEventsPromise }) => {
                                                     {event.address}
                                                 </td>
                                                 <td>
-                                                    {format(new Date(event.eventDate), 'MMMM. dd. yy')}
+                                                    {format(new Date(event.eventDate), 'MMMM dd, yy')}
                                                 </td>
                                                 <td>
-                                                    {format(new Date(event.joinedData), 'MMMM. dd. yy')}
+                                                    {format(new Date(event.joinedData), 'MMMM dd, yy')}
                                                 </td>
                                             </tr>)
                                         }
@@ -80,9 +76,9 @@ const EventsList = ({ myJoinedEventsPromise }) => {
                                             <h3 className="text-lg font-bold my-6">{event.title}</h3>
                                             <p><span className="font-semibold">Name:</span> {event.name}</p>
                                             <p><span className="font-semibold">Email:</span> {event.email}</p>
-                                            <p><span className="font-semibold">Deadline:</span> {event.phone}</p>
-                                            <p><span className="font-semibold">Category:</span> {event.eventDate}</p>
-                                            <p><span className="font-semibold">Budget:</span> ${event.joinedData}</p>
+                                            <p><span className="font-semibold">Phone:</span> {event.phone}</p>
+                                            <p><span className="font-semibold">Event Date:</span> {event.eventDate}</p>
+                                            <p><span className="font-semibold">Joined Date:</span> ${event.joinedData}</p>
                                             {/* <div className="flex justify-between items-center mt-6">
                                                 <button className="btn hover:bg-green-200"><FaGavel size={20} /></button>
                                                 <Link to={`/updateTask/${task._id}`}>

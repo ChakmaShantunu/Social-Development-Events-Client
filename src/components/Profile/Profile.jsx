@@ -18,7 +18,7 @@ const Profile = () => {
                     tabIndex={0}
                     className="menu dropdown-content bg-base-100 rounded-box z-10 mt-2 w-52 p-2 shadow-sm">
                     <li>
-                        <Link>Create Events</Link>
+                        <Link to='/addEvent'>Create Events</Link>
                     </li>
                     <li>
                         <Link>Manage Events</Link>
