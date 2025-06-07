@@ -4,6 +4,7 @@ import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import axios from 'axios';
 import { title } from 'framer-motion/client';
 import Swal from 'sweetalert2';
+import { AnimatePresence, motion } from "motion/react"
 
 const JoinEvent = () => {
 
@@ -67,7 +68,12 @@ const JoinEvent = () => {
 
 
     return (
-        <div className='my-24'>
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className='my-24'>
             <h3 className="text-3xl mb-6">Apply for this job: <Link to={`/eventDetails/${id}`}>Details</Link></h3>
             <form onSubmit={handleJoinFormSubmit}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -110,7 +116,7 @@ const JoinEvent = () => {
                 </div>
                 <input type="submit" className='btn w-full mt-12' value="Join" />
             </form>
-        </div>
+        </motion.div>
     );
 };
 

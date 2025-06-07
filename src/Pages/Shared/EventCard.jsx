@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import { format } from 'date-fns';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import { div } from 'framer-motion/client';
 
 const EventCard = ({ event }) => {
     const { user } = use(AuthContext);
@@ -16,7 +17,7 @@ const EventCard = ({ event }) => {
             </div> */}
             <figure className='w-full h-60 overflow-hidden rounded'>
                 <img
-                className='w-full h-full object-cover'
+                    className='w-full h-full object-cover'
                     src={thumbnailUrl}
                     alt="Shoes" />
             </figure>
