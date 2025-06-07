@@ -43,10 +43,10 @@ const PostedEventCard = ({ event }) => {
 
                 </div>
                 <div className="card-actions justify-end">
-                    <Link to={`/eventDetails/${_id}`}><motion.button
+                    <Link to={`/updateEvent/${_id}`}><motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        className="btn btn-primary">View Event</motion.button></Link>
+                        className="btn btn-primary">Update Event</motion.button></Link>
                 </div>
             </div>
         </div>

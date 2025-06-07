@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import EventCard from '../Shared/EventCard';
-import { AnimatePresence, motion } from "framer-motion";
 import { div } from 'framer-motion/client';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import Loading from '../../components/Loader/Loading';
+import { AnimatePresence, motion } from "motion/react"
 
 const UpcomingEvents = () => {
 
@@ -28,7 +28,7 @@ const UpcomingEvents = () => {
             })
     }, [])
 
-    if(loading) {
+    if (loading) {
         return <Loading></Loading>
     }
 

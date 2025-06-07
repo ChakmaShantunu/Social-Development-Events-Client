@@ -20,6 +20,7 @@ const EventDetails = () => {
     }
 
     const { thumbnailUrl, title, description, maxParticipants, eventDate, location, eventType, _id } = useLoaderData();
+    console.log(_id);
     return (
         <motion.div
             initial={{ y: 50, opacity: 0 }}

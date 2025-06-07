@@ -10,7 +10,7 @@ import PostedEventCard from './PostedEventCard';
 const MyPostedEvents = ({ myPostedEvents }) => {
 
     const events = use(myPostedEvents);
-    console.log(events);
+    // console.log(events);
 
     return (
         <motion.div
@@ -19,10 +19,12 @@ const MyPostedEvents = ({ myPostedEvents }) => {
             transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}
             className='my-12'>
-            <div className='text-center space-y-4'>
+            {
+                events.length === 0 ? (<p className='text-3xl text-center mt-12 font-bold'>No Event found. You have not created any event yet.</p>) : (<div className='text-center space-y-4'>
                 <h1 className='text-6xl'>My Events</h1>
                 <p>Explore today’s featured events and get involved in meaningful social development activities. Discover the events scheduled for today. Don’t miss out—stay updated and involved!</p>
-            </div>
+            </div>)
+            }
             <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 my-24 mx-4'>
                 <AnimatePresence>
                     {

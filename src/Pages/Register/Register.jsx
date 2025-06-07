@@ -79,8 +79,8 @@ const Register = () => {
                         <input type="password" name='password' className="input" placeholder="Password" />
 
                         <button className="btn btn-neutral mt-4">Register</button>
-                        <SocialLogIn></SocialLogIn>
                     </form>
+                    <SocialLogIn></SocialLogIn>
                     <p>Already have an account? Please <Link className='underline' to='/signin'>Login</Link></p>
                 </div>
             </motion.div>

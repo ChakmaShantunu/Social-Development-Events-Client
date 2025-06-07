@@ -10,7 +10,7 @@ const EventsList = ({ myJoinedEventsPromise }) => {
             <div className='my-6'>
                 {
                     events.length === 0 ?
-                        (<p className='text-3xl text-center mt-12 font-bold'>No tasks found. You have not posted any tasks yet.</p>) :
+                        (<p className='text-3xl text-center mt-12 font-bold'>No event found. You have not joined any event yet.</p>) :
                         (<div>
                             <div className="hidden lg:block overflow-x-auto">
                                 <table className="table">
