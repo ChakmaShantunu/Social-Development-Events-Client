@@ -21,7 +21,7 @@ const Profile = () => {
                         <Link to='/addEvent'>Create Events</Link>
                     </li>
                     <li>
-                        <Link>Manage Events</Link>
+                        <Link to='/manageEvents'>Manage Events</Link>
                     </li>
                     <li>
                         {/* <Link to={`/jobApply/${user.id}`}>Applied Jobs</Link> */}
