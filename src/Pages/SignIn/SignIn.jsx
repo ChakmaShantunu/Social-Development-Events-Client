@@ -63,17 +63,17 @@ const SignIn = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: easeInOut, type: 'spring', stiffness: 80, damping: 10 }}
                 className="card bg-base-100 w-full mx-auto mt-12 max-w-sm shrink-0 shadow-2xl my-12 outline-1 bg-cover bg-center" style={{ backgroundImage: `url(${signinbg})` }}>
-                <h3 className="text-2xl font-bold text-center pt-8">Sign in now!</h3>
+                <h3 className="text-2xl font-bold text-center pt-8 text-black">Sign in now!</h3>
                 <div className="card-body">
                     <form onSubmit={handleSignIn} className="fieldset space-y-2 py-4">
-                        <label className="label">Email</label>
+                        <label className="label text-black">Email</label>
                         <input type="email" name='email' className="input" placeholder="Email" />
-                        <label className="label">Password</label>
+                        <label className="label text-black">Password</label>
                         <input type="password" name='password' className="input" placeholder="Password" />
-                        <div><button className="link link-hover">Forgot password?</button></div>
+                        <div><button className="link link-hover text-black">Forgot password?</button></div>
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                     </form>
-                    <p>New to this website? Please <Link className='underline' to='/register'>Register</Link></p>
+                    <p className='text-black'>New to this website? Please <Link className='underline' to='/register'>Register</Link></p>
                     <SocialLogIn from={from}></SocialLogIn>
                 </div>
             </motion.div>
