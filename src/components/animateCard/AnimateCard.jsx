@@ -52,7 +52,7 @@ const AnimateCard = () => {
                                 <img
                                     src={feature1}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Tree Plantation Drive</h2>
@@ -73,7 +73,7 @@ const AnimateCard = () => {
                                 <img
                                     src={feature2}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Community Clean-Up Campaign</h2>
@@ -94,10 +94,10 @@ const AnimateCard = () => {
                                 <img
                                     src={feature3}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
-                                <h2 className="card-title">Free Education Workshop for Underprivileged Children</h2>
+                                <h2 className="card-title">Free Education Workshop</h2>
                                 <p>Volunteer as a mentor or organizer to support basic education and learning materials for children in need.</p>
                                 <div className="card-actions">
                                     <AnimatedButton></AnimatedButton>
@@ -115,11 +115,11 @@ const AnimateCard = () => {
                                 <img
                                     src={feature4}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Free Health Checkup Camp</h2>
-                                <p>Doctors and volunteers will offer free medical consultations, basic tests, and health awareness sessions. Make health accessible for all!</p>
+                                <p>Doctors and volunteers will offer free medical consultations, basic tests, and health awareness sessions.</p>
                                 <div className="card-actions">
                                     <AnimatedButton></AnimatedButton>
                                 </div>
@@ -136,7 +136,7 @@ const AnimateCard = () => {
                                 <img
                                     src={feature5}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Food Distribution for Homeless</h2>
@@ -157,11 +157,11 @@ const AnimateCard = () => {
                                 <img
                                     src={feature6}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Skill Development Seminar for Youth</h2>
-                                <p>A powerful event focusing on building soft skills, communication, and basic job readiness for young people from underprivileged backgrounds.</p>
+                                <p>A powerful event focusing on building soft skills, communication, and basic job readiness for young.</p>
                                 <div className="card-actions">
                                     <AnimatedButton></AnimatedButton>
                                 </div>
@@ -178,7 +178,7 @@ const AnimateCard = () => {
                                 <img
                                     src={feature7}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Beach Cleaning Mission</h2>
@@ -199,11 +199,11 @@ const AnimateCard = () => {
                                 <img
                                     src={feature8}
                                     alt="Shoes"
-                                    className="rounded-xl" />
+                                    className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
                                 <h2 className="card-title">Art for Awareness Workshop</h2>
-                                <p>A creative workshop where participants use painting and sketching to spread awareness about social issues like mental health, education, and environment.</p>
+                                <p>A creative workshop where participants use painting and sketching to spread awareness about social issues like mental health etc.</p>
                                 <div className="card-actions">
                                     <AnimatedButton></AnimatedButton>
                                 </div>
