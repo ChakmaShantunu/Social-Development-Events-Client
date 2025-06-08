@@ -1,10 +1,12 @@
 
-"use client"
+
 import React from 'react';
 import '../../animateBorder.css'
 import { div } from 'framer-motion/client';
 import { motion } from "motion/react"
 import { useTime, useTransform } from 'framer-motion';
+import { FaPaperPlane } from "react-icons/fa6";
+import AnimatedButton from '../animatedButton/AnimatedButton';
 
 
 
@@ -25,10 +27,15 @@ const AnimateCard = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}
-            className='my-12'>>
-            <div>
+            className='my-12'>
+            <div className='space-y-4'>
                 <h1 className='text-center text-5xl'>Our Features</h1>
+                <p className="mt-2 text-center text-gray-600 dark:text-gray-300 max-w-5xl mx-auto">
+                    Discover powerful features designed to connect communities, simplify event management, and empower social engagement — all in one platform.
+                </p>
+
             </div>
+            <div className="divider max-w-3xl mx-auto"><FaPaperPlane size={25}/></div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-24'>
                 <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
                     <div className='relative'>
@@ -43,7 +50,7 @@ const AnimateCard = () => {
                                 <h2 className="card-title">Card Title</h2>
                                 <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary">Buy Now</button>
+                                    <AnimatedButton></AnimatedButton>
                                 </div>
                             </div>
                         </div>

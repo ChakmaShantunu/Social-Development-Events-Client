@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
             {
                 path: '/eventDetails/:id',
                 Component: EventDetails,
-                loader: ({ params }) => fetch(`http://localhost:3000/eventDetails/${params.id}`),
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/eventDetails/${params.id}`),
                 hydrateFallbackElement: <Loading></Loading>
             },
             {
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
             {
                 path: '/updateEvent/:id',
                 element: <PrivateRoute><UpdateEvent></UpdateEvent></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/created-events/${params.id}`),
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/created-events/${params.id}`),
             },
             {
                 path: 'register',

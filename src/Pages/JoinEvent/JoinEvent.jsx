@@ -15,7 +15,7 @@ const JoinEvent = () => {
     console.log(id, user);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/eventdetails/${id}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/eventdetails/${id}`)
             .then(res => {
                 console.log(res.data);
                 setEvent(res.data)
@@ -47,7 +47,8 @@ const JoinEvent = () => {
 
         // send db the info
 
-        axios.post('http://localhost:3000/participants', participant)
+
+        axios.post(`${import.meta.env.VITE_API_URL}/participants`, participant)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {

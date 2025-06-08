@@ -23,7 +23,7 @@ const UpdateEvent = () => {
         updatedEvent.eventDate = startDate.toISOString();
         console.log(updatedEvent);
 
-        fetch(`http://localhost:3000/created-events/${_id}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/created-events/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

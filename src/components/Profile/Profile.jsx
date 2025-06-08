@@ -9,7 +9,7 @@ const Profile = () => {
             <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="rounded avatar w-12 cursor-pointer">
                     <img
-                        src={user?.photoURL}
+                        src={user?.photoURL || "https://i.ibb.co/5xhk2qJ/default-avatar.png"}
                         alt="Tailwind-CSS-Avatar-component"
                         className='w-12 h-12 object-cover rounded'
                     />

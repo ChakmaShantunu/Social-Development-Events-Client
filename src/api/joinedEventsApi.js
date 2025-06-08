@@ -1,3 +1,3 @@
 export const myJoinedEventsPromise = email => {
-    return fetch(`http://localhost:3000/participants?email=${email}`).then(res => res.json())
+    return fetch(`${import.meta.env.VITE_API_URL}/participants?email=${email}`).then(res => res.json())
 }

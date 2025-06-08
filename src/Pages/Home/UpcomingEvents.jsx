@@ -18,7 +18,8 @@ const UpcomingEvents = () => {
     const displayEvents = showAll ? upcomingEvents : upcomingEvents.slice(0, 8)
 
     useEffect(() => {
-        fetch('http://localhost:3000/events')
+
+        fetch(`${import.meta.env.VITE_API_URL}/events`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data);
