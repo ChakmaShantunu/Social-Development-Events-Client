@@ -11,7 +11,7 @@ const EventCard = ({ event }) => {
 
     const { title, description, thumbnailUrl, location, maxParticipants, eventDate, eventType, _id } = event
     return (
-        <div className="card bg-base-100 w-96 shadow-sm h-full cursor-pointer hover:scale-105 transition-transform duration-300">
+        <div className="card bg-base-100 w-auto shadow-sm h-full cursor-pointer hover:scale-105 transition-transform duration-300 border-b-secondary-content">
             {/* <div className='flex justify-center gap-2'>
                 
             </div> */}

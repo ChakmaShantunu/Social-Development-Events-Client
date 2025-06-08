@@ -17,7 +17,7 @@ const AnimatedButton = () => {
     });
 
     const rotatingBg = useTransform(rotate, (r) => {
-        return `conic-gradient(from ${r}deg, transparent 75%, #bdd222, #1319e8, #1740cd, #bddf30)`
+        return `conic-gradient(from ${r}deg, transparent 25%, #bdd222, #1319e8, #1740cd, #bddf30)`
     })
     return (
         <div className='flex gap-4 items-center justify-center'>
