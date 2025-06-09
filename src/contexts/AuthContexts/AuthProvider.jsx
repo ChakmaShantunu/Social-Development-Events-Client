@@ -3,6 +3,7 @@ import { AuthContext } from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { auth } from '../../Firebase/firebase.init';
 import { ToastContainer } from 'react-toastify';
+import axios from 'axios';
 
 
 const googleProvider = new GoogleAuthProvider();
@@ -48,12 +49,20 @@ const AuthProvider = ({ children }) => {
                         photoURL: currentUser.photoURL,
                     })
                     setLoading(false)
+                    if (currentUser?.email) {
+                        axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: currentUser.email }, { withCredentials: true })
+                            .then(res => {
+                                console.log(res.data);
+                            })
+                    }
                 })
             } else {
                 setUser(null)
                 setLoading(false)
             }
             console.log(currentUser);
+
+
         })
         return () => {
             unSubscribe();
