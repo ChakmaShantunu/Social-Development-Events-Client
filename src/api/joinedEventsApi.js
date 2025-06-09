@@ -1,7 +1,10 @@
 
-export const myJoinedEventsPromise = email => {
+export const myJoinedEventsPromise = (email, accessToken) => {
     return fetch(`${import.meta.env.VITE_API_URL}/participants?email=${email}`, {
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
     }).then(res => res.json())
 }
 

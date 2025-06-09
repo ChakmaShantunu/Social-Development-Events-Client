@@ -47,6 +47,7 @@ const AuthProvider = ({ children }) => {
                         email: currentUser.email,
                         displayName: currentUser.displayName,
                         photoURL: currentUser.photoURL,
+                        accessToken: currentUser.accessToken,
                     })
                     setLoading(false)
                     if (currentUser.email) {
@@ -67,6 +68,7 @@ const AuthProvider = ({ children }) => {
                 setLoading(false)
             }
             console.log(currentUser);
+            console.log(currentUser.accessToken)
 
 
         })
