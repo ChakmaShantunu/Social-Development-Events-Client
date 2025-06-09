@@ -1,4 +1,4 @@
-import { div } from 'framer-motion/client';
+
 import React, { use } from 'react';
 import { format } from 'date-fns';
 
@@ -31,7 +31,7 @@ const EventsList = ({ myJoinedEventsPromise }) => {
                                     <tbody>
 
                                         {
-                                            events.map((event, index) => <tr key={event._id} className='hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer'>
+                                            Array.isArray(events) && events.map((event, index) => <tr key={event._id} className='hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer'>
                                                 <th>
                                                     {index + 1}
                                                 </th>

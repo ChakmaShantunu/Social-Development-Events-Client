@@ -49,10 +49,16 @@ const AuthProvider = ({ children }) => {
                         photoURL: currentUser.photoURL,
                     })
                     setLoading(false)
-                    if (currentUser?.email) {
-                        axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: currentUser.email }, { withCredentials: true })
+                    if (currentUser.email) {
+                        const userData = { email: currentUser.email }
+                        axios.post(`${import.meta.env.VITE_API_URL}/jwt`, userData, {
+                            withCredentials: true
+                        })
                             .then(res => {
                                 console.log(res.data);
+                            })
+                            .catch(error => {
+                                console.log(error);
                             })
                     }
                 })
