@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router';
 import { IoCheckbox } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
+import { format } from 'date-fns';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import Loading from '../../components/Loader/Loading';
 
@@ -35,8 +36,8 @@ const EventDetails = () => {
                 <h2 className="card-title text-3xl font-semibold">{title}</h2>
                 <p className='text-lg'>{description}</p>
                 <p><strong>Type:</strong> {eventType}</p>
-                <p><strong>Date:</strong> {eventDate}</p>
-                <p><strong>Time:</strong> 10:00 AM - 4:00 PM (GMT+6)</p>
+                <p><strong>Date:</strong> {format(new Date(eventDate), 'MMMM dd, yy')}</p>
+                <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
                 <p><strong>Location:</strong> {location}</p>
                 <p><strong>Participants:</strong> {maxParticipants}</p>
                 <h3 className='text-3xl mb-3'>Key Responsibilities: </h3>
