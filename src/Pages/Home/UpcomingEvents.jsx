@@ -133,7 +133,7 @@ const UpcomingEvents = () => {
                     <option value="Health">Health Camp</option>
                 </select>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12'>
+            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12 mx-auto md:mx-2 lg:mx-4'>
                 <AnimatePresence>
                     {
                         displayEvents.map(event => (<motion.div key={event._id}
