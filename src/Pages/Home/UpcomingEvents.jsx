@@ -101,7 +101,7 @@ const UpcomingEvents = () => {
             </div>
             <div className='flex justify-around items-center mt-12'>
                 <div className='flex justify-center items-center'>
-                    <label className="input w-2xl mr-4 h-12">
+                    <label className="input md:w-xl lg:w-2xl mr-4 h-12">
                         <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g
                                 strokeLinejoin="round"
@@ -133,7 +133,7 @@ const UpcomingEvents = () => {
                     <option value="Health">Health Camp</option>
                 </select>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12 mx-4'>
+            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12'>
                 <AnimatePresence>
                     {
                         displayEvents.map(event => (<motion.div key={event._id}
