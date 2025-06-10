@@ -25,6 +25,7 @@ const UpdateEvent = () => {
 
         fetch(`${import.meta.env.VITE_API_URL}/created-events/${_id}`, {
             method: 'PUT',
+            credentials: 'include',
             headers: {
                 'content-type': 'application/json'
             },

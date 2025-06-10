@@ -15,7 +15,9 @@ const JoinEvent = () => {
     console.log(id, user);
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL}/eventdetails/${id}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/eventDetails/${id}`, {
+            withCredentials: true
+        })
             .then(res => {
                 console.log(res.data);
                 setEvent(res.data)
@@ -48,7 +50,9 @@ const JoinEvent = () => {
         // send db the info
 
 
-        axios.post(`${import.meta.env.VITE_API_URL}/participants`, participant)
+        axios.post(`${import.meta.env.VITE_API_URL}/participants`, participant, {
+            withCredentials: true
+        })
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {

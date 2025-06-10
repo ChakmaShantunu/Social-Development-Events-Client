@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { use, useContext, useEffect, useState } from 'react';
 import EventCard from '../Shared/EventCard';
 import { div } from 'framer-motion/client';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "motion/react"
 
 const UpcomingEvents = () => {
 
-    const { loading } = useContext(AuthContext);
+    const { loading, user } = useContext(AuthContext);
 
     const [events, setEvents] = useState([])
     const today = new Date();
@@ -19,7 +19,9 @@ const UpcomingEvents = () => {
 
     useEffect(() => {
 
-        fetch(`${import.meta.env.VITE_API_URL}/events`)
+        fetch(`${import.meta.env.VITE_API_URL}/events`, {
+            credentials: 'include'
+        })
             .then(res => res.json())
             .then(data => {
                 setEvents(data);
