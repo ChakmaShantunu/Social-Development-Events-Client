@@ -15,8 +15,6 @@ const Register = () => {
     const navigate = useNavigate();
     const { createUser, updateUser, setUser } = useContext(AuthContext);
 
-
-
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
@@ -24,7 +22,26 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, photo, password)
+        console.log(name, email, photo, password);
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (regex.test(password)) {
+            alert("valid password")
+        }
+        else {
+            alert("Password must contain at least one capital letter, one smaller and a number")
+        }
+
+        if (!name || !email || !password) {
+            alert("Please fill in all fields")
+            return;
+        }
+
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters")
+            return;
+        }
 
         //create user
         createUser(email, password)
@@ -38,20 +55,10 @@ const Register = () => {
                 })
                     .catch(error => {
                         console.log(error);
-                        setUser(user)
+                        setUser(user);
                     })
-                // if (result.user.accessToken) {
-                //     Swal.fire({
-                //         position: "center",
-                //         icon: "success",
-                //         title: "Register Successful",
-                //         showConfirmButton: false,
-                //         timer: 1500
-                //     });
-                // }
-
             })
-            .then(error => {
+            .catch(error => {
                 console.log(error);
             })
     }

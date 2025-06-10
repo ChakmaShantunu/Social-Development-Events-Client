@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import { useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
 
 const SocialLogIn = ({ from }) => {
 
@@ -11,9 +12,10 @@ const SocialLogIn = ({ from }) => {
         googleSignIn()
             .then(result => {
                 console.log(result.user);
+                toast.success("Logged in successful");
                 navigate(from || '/');
             })
-            .then(error => {
+            .catch(error => {
                 console.log(error);
             })
     }

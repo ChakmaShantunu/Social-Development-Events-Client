@@ -11,8 +11,6 @@ import SocialLogIn from '../Shared/SocialLogIn';
 
 const SignIn = () => {
 
-
-
     const { signInUser } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -52,6 +50,7 @@ const SignIn = () => {
             })
 
     }
+
 
     return (
         <div className='flex flex-col md:flex-row lg:flex-row items-center justify-center mx-auto'>
