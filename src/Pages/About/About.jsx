@@ -1,8 +1,14 @@
 import React from 'react';
+import { motion } from "motion/react"
 
 const About = () => {
     return (
-        <div className="py-20 bg-base-300">
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="py-20 bg-base-300">
             <div className="max-w-6xl mx-auto px-4 text-center">
                 <h2 className="text-4xl font-extrabold mb-6">About Our Platform</h2>
                 <p className="text-lg md:text-xl max-w-3xl mx-auto mb-12">
@@ -33,7 +39,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
