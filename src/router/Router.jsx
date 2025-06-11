@@ -13,6 +13,7 @@ import ManageEvents from "../Pages/ManageEvents/ManageEvents";
 import Loading from "../components/Loader/Loading";
 import UpdateEvent from "../Pages/ManageEvents/UpdateEvent";
 import NotFound from "../Pages/NotFound/NotFound";
+import About from "../Pages/About/About";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path: '/upcomingEvents',
                 Component: UpcomingEvents
+            },
+            {
+                path: '/about',
+                Component: About
             },
             {
                 path: '/eventDetails/:id',

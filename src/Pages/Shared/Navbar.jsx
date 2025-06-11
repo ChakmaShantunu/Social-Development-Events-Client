@@ -53,6 +53,7 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/upcomingEvents'>Upcoming Events</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-xl w-full">
