@@ -23,7 +23,6 @@ const AddEvent = () => {
 
         newEvent.eventDate = startDate.toISOString();
         console.log(newEvent);
-        // http://localhost:3000/events
 
         axios.post(`${import.meta.env.VITE_API_URL}/events`, newEvent, {
             withCredentials: true

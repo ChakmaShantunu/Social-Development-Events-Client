@@ -67,7 +67,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <img src={logo} alt="" />
+                <img className='hidden md:block lg:block' src={logo} alt="" />
                 <Link to='/' className="btn btn-ghost text-xl hidden md:block lg:block">NoboUddog</Link>
             </div>
             <div className="navbar-center hidden lg:flex">

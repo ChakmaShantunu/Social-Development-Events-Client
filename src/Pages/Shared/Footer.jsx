@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
             <aside>
                 <div className='flex items-center'>
-                    <img src={logo} alt="" />
+                    <img className='hidden md:block lg:block' src={logo} alt="" />
                     <Link to='/' className="btn btn-ghost text-xl hidden md:block lg:block">NoboUddog</Link>
                 </div>
                 <p>
