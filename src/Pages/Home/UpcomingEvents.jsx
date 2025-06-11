@@ -3,41 +3,20 @@ import EventCard from '../Shared/EventCard';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import Loading from '../../components/Loader/Loading';
 import { AnimatePresence, motion } from "motion/react"
+import { data } from 'react-router';
+import { filter } from 'framer-motion/client';
 
 const UpcomingEvents = () => {
 
     const { loading, user } = useContext(AuthContext);
 
     const [events, setEvents] = useState([]);
-    const [filteredEvents, setFilteredEvents] = useState([]);
+    // const [eventDate, setEventDate] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [searchTitle, setSearchTitle] = useState("");
-    const [inputText, setInputText] = useState('')
-    // const today = new Date();
-
-    // const upcomingEvents = events.filter(event => new Date(event.eventDate) >= today);
-
+    const [inputText, setInputText] = useState('');
     const [showAll, setShowAll] = useState(false);
 
-    // use
-
-
-
-
-    // useEffect(() => {
-
-    //     fetch(`${import.meta.env.VITE_API_URL}/events`, {
-    //         credentials: 'include'
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setEvents(data);
-    //             setFilteredEvents(data);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }, [])
 
 
 
@@ -57,9 +36,18 @@ const UpcomingEvents = () => {
     //     setFilteredEvents(upcoming);
     // }, [events, selectedCategory, searchTitle])
 
-    const displayEvents = showAll ? events : events.slice(0, 8);
+    // const today = new Date()
+
+
+
+    // useEffect(() => {
+    //     const filtered = events.filter(event => new Date(event.eventDate) >= today)
+    //     setFilteredEvents(filtered);
+    // }, [events, today])
+
 
     useEffect(() => {
+
         let query = '';
 
         if (selectedCategory !== 'all') {
@@ -71,17 +59,38 @@ const UpcomingEvents = () => {
             query += `title=${encodeURIComponent(searchTitle.trim())}`;
         }
 
+
+
         fetch(`${import.meta.env.VITE_API_URL}/events?${query}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setEvents(data);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0)
+                const filteredEvent = data.filter(event => new Date(event.eventDate) >= today)
+                setEvents(filteredEvent);
+                // setEvents(data);
             })
             .catch(error => {
                 console.log(error);
             })
 
     }, [selectedCategory, searchTitle])
+    const displayEvents = showAll ? events : events.slice(0, 8);
+
+    // useEffect(() => {
+    //     fetch(`${import.meta.env.VITE_API_URL}/events`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             const today = new Date();
+    //             today.setHours(0, 0, 0, 0)
+    //             const filteredEvent = data.filter(event => new Date(event.eventDate) >= today)
+    //             setEvents(filteredEvent);
+    //         })
+    // }, [])
+
+
 
 
     if (loading) {

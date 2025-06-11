@@ -1,5 +1,5 @@
 
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import { button } from 'motion/react-client';
 import Swal from 'sweetalert2';
@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { motion } from "motion/react"
 import Profile from '../../components/Profile/Profile';
 import { useContext, useEffect, useState } from 'react';
+import logo from '../../assets/logo/logo.png'
 
 const Navbar = () => {
 
@@ -66,7 +67,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl hidden md:block lg:block"><img alt="" /> daisyUI</a>
+                <Link to='/' className="btn btn-ghost text-xl hidden md:block lg:block"><img src={logo} alt="" /> NoboUddog</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
