@@ -85,10 +85,15 @@ const Register = () => {
                         <label className="label text-black">Password</label>
                         <input type="password" name='password' className="input" placeholder="Password" />
 
-                        <button className="btn btn-neutral mt-4">Register</button>
+                        <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }} className="btn btn-neutral mt-4">Register</motion.button>
                     </form>
                     <SocialLogIn></SocialLogIn>
-                    <p>Already have an account? Please <Link className='underline' to='/signin'>Login</Link></p>
+                    <p>Already have an account? Please <motion.Link
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        className='underline' to='/signin'>Login</motion.Link></p>
                 </div>
             </motion.div>
             <div>

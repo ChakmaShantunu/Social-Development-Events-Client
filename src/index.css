@@ -4,6 +4,8 @@
 
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
+
+  --color-primary: ##2596be;
 }
 
 body {

@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from "motion/react"
+import road_clean from '../../assets/gallery/road-cleaning.jpg'
+import garbage_clean from '../../assets/gallery/garbage-clean.jpg'
+import social_banner from '../../assets/gallery/social-banner.jpg'
 import gallery1 from '../../assets/gallery/gallery1.jpg'
 import gallery2 from '../../assets/gallery/gallery2.jpg'
 import gallery3 from '../../assets/gallery/gallery3.jpg'
@@ -27,9 +30,9 @@ const Gallery = () => {
 
             </div>
             <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-                <img src={gallery7} alt="" className="w-full h-full object-cover col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square" />
-                <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={gallery1} />
-                <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={gallery2} />
+                <img src={social_banner} alt="" className="w-full h-full object-cover col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square" />
+                <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={road_clean} />
+                <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={garbage_clean} />
                 <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={gallery3} />
                 <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={gallery4} />
                 <img alt="" className="w-full h-full object-cover rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={gallery5} />
