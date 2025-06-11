@@ -12,6 +12,7 @@ import AddEvent from "../Pages/AddEvent/AddEvent";
 import ManageEvents from "../Pages/ManageEvents/ManageEvents";
 import Loading from "../components/Loader/Loading";
 import UpdateEvent from "../Pages/ManageEvents/UpdateEvent";
+import NotFound from "../Pages/NotFound/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -66,5 +67,9 @@ export const router = createBrowserRouter([
                 Component: SignIn
             }
         ]
+    },
+    {
+        path: '*',
+        Component: NotFound
     }
 ])

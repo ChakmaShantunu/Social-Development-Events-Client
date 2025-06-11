@@ -1,11 +1,15 @@
 import React from 'react';
 import logo from '../../assets/logo/logo.png'
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
         <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
             <aside>
-                <Link to='/' className="btn btn-ghost text-xl hidden md:block lg:block"><img src={logo} alt="" /> NoboUddog</Link>
+                <div className='flex items-center'>
+                    <img src={logo} alt="" />
+                    <Link to='/' className="btn btn-ghost text-xl hidden md:block lg:block">NoboUddog</Link>
+                </div>
                 <p>
                     ACME Industries Ltd.
                     <br />
