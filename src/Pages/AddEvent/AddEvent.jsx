@@ -5,6 +5,7 @@ import { object } from 'framer-motion/client';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
+import { motion } from "motion/react"
 
 const AddEvent = () => {
 
@@ -48,7 +49,12 @@ const AddEvent = () => {
 
 
     return (
-        <div className='md:p-6'>
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className='md:p-6'>
             <div className='p-12 text-center space-y-4'>
                 <h1 className='text-2xl md:text-4xl lg:text-6xl'>Add new event</h1>
                 <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
@@ -101,7 +107,7 @@ const AddEvent = () => {
                 </div>
                 <input type="submit" className='btn w-full mt-12' value="Add Coffee" />
             </form>
-        </div>
+        </motion.div>
     );
 };
 
