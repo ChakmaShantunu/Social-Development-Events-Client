@@ -14,6 +14,7 @@ import Loading from "../components/Loader/Loading";
 import UpdateEvent from "../Pages/ManageEvents/UpdateEvent";
 import NotFound from "../Pages/NotFound/NotFound";
 import About from "../Pages/About/About";
+import Contact from "../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: '/about',
                 Component: About
+            },
+            {
+                path: '/contact',
+                Component: Contact
             },
             {
                 path: '/eventDetails/:id',
