@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "freelance-marketplace-app"
-  }
+    "default": "social-event-platform-8f1fd",
+    "social-event": "social-event-platform-8f1fd"
+  },
+  "targets": {},
+  "etags": {}
 }

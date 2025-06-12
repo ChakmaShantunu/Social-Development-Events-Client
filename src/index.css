@@ -11,3 +11,8 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+a.active {
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
+}
