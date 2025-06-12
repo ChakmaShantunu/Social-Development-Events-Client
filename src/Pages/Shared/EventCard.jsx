@@ -12,23 +12,12 @@ const EventCard = ({ event }) => {
     const { title, description, thumbnailUrl, location, maxParticipants, eventDate, eventType, _id } = event
     return (
         <div className="card bg-base-100 w-96 shadow-sm h-full cursor-pointer hover:scale-105 transition-transform duration-300">
-            {/* <div className='flex justify-center gap-2'>
-                
-            </div> */}
             <figure className='w-full h-60 overflow-hidden rounded'>
                 <img
                     className='w-full h-full object-cover'
                     src={thumbnailUrl}
-                    alt="Shoes" />
+                    alt="eventPhoto" />
             </figure>
-            {/* <div>
-                <h3 className="text-3xl">{title}</h3>
-                <p className='flex gap-1 items-center'><FaMapMarkerAlt /> {location}</p>
-            </div> */}
-            {/* <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p className='flex gap-1 items-center'><FaMapMarkerAlt /> {location}</p>
-            </div> */}
             <div className="card-body">
                 <h2 className="card-title">
                     {title}

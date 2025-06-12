@@ -29,7 +29,6 @@ const Banner = () => {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 1, ease: easeInOut, type: 'spring', stiffness: 80, damping: 10 }}
                                 className="text-5xl font-bold leading-none sm:text-6xl">Empower Communities, One Event at a Time
-                                {/* <span className="dark:text-violet-600">One Event at a Time</span> */}
                             </motion.h1>
                             <motion.p
                                 initial={{ y: 50, opacity: 0 }}

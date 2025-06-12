@@ -59,3 +59,4 @@ If you are developing a production application, we recommend using TypeScript wi
 13. React Date picker
 14. Axios
 15. JWT
+16. Swiper js

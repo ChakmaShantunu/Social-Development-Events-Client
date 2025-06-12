@@ -79,13 +79,6 @@ const EventsList = ({ myJoinedEventsPromise }) => {
                                             <p><span className="font-semibold">Phone:</span> {event.phone}</p>
                                             <p><span className="font-semibold">Event Date:</span> {event.eventDate}</p>
                                             <p><span className="font-semibold">Joined Date:</span> ${event.joinedData}</p>
-                                            {/* <div className="flex justify-between items-center mt-6">
-                                                <button className="btn hover:bg-green-200"><FaGavel size={20} /></button>
-                                                <Link to={`/updateTask/${task._id}`}>
-                                                    <button className="btn hover:bg-blue-200"><MdOutlineSystemUpdateAlt size={20} /></button>
-                                                </Link>
-                                                <button onClick={() => handleDelete(task._id)} className="btn hover:bg-red-200"><MdDelete size={20} /></button>
-                                            </div> */}
                                         </div>
                                     ))
                                 }

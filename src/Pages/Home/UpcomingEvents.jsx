@@ -11,54 +11,30 @@ const UpcomingEvents = () => {
     const { loading, user } = useContext(AuthContext);
 
     const [events, setEvents] = useState([]);
-    // const [eventDate, setEventDate] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [searchTitle, setSearchTitle] = useState("");
     const [inputText, setInputText] = useState('');
     const [showAll, setShowAll] = useState(false);
-
-
-
-
-    // useEffect(() => {
-    //     const today = new Date();
-
-    //     let upcoming = events.filter(event => new Date(event.eventDate) >= today);
-
-    //     if (selectedCategory !== 'all') {
-    //         upcoming = upcoming.filter(event => event.eventType === selectedCategory);
-    //     }
-
-    //     if (searchTitle.trim()) {
-    //         upcoming = upcoming.filter(e => e.title.toLowerCase().includes(searchTitle.toLowerCase()));
-    //     }
-
-    //     setFilteredEvents(upcoming);
-    // }, [events, selectedCategory, searchTitle])
-
-    // const today = new Date()
-
-
-
-    // useEffect(() => {
-    //     const filtered = events.filter(event => new Date(event.eventDate) >= today)
-    //     setFilteredEvents(filtered);
-    // }, [events, today])
-
 
     useEffect(() => {
 
         let query = '';
 
         if (selectedCategory !== 'all') {
-            query += `eventType=${selectedCategory}`
+            query = query + `eventType=${selectedCategory}`
         }
 
-        if (searchTitle.trim()) {
-            if (query) query += '&';
-            query += `title=${encodeURIComponent(searchTitle.trim())}`;
-        }
+        const trimmedTitle = searchTitle.trim();
 
+        if (trimmedTitle) {
+            if (query) {
+                query = query + '&'
+            }
+
+            const encodedTitle = encodeURIComponent(trimmedTitle);
+
+            query = query + `title=${encodedTitle}`;
+        }
 
 
         fetch(`${import.meta.env.VITE_API_URL}/events?${query}`)
@@ -69,7 +45,6 @@ const UpcomingEvents = () => {
                 today.setHours(0, 0, 0, 0)
                 const filteredEvent = data.filter(event => new Date(event.eventDate) >= today)
                 setEvents(filteredEvent);
-                // setEvents(data);
             })
             .catch(error => {
                 console.log(error);
@@ -77,21 +52,6 @@ const UpcomingEvents = () => {
 
     }, [selectedCategory, searchTitle])
     const displayEvents = showAll ? events : events.slice(0, 8);
-
-    // useEffect(() => {
-    //     fetch(`${import.meta.env.VITE_API_URL}/events`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             const today = new Date();
-    //             today.setHours(0, 0, 0, 0)
-    //             const filteredEvent = data.filter(event => new Date(event.eventDate) >= today)
-    //             setEvents(filteredEvent);
-    //         })
-    // }, [])
-
-
-
 
     if (loading) {
         return <Loading></Loading>

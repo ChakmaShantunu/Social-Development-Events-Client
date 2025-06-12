@@ -28,7 +28,6 @@ const AnimateCard = () => {
 
     const rotatingBg = useTransform(rotate, (r) => {
         return `conic-gradient(from ${r}deg, transparent 75%, #fef9c3, #a5f3fc, #d8b4fe, #fef9c3)`
-        // return `conic-gradient(from ${r}deg, #fef9c3, #a5f3fc, #d8b4fe, #fef9c3)`
     })
     return (
         <motion.div initial={{ y: 50, opacity: 0 }}

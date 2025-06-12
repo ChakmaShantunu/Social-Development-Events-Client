@@ -46,25 +46,6 @@ const UpdateEvent = () => {
                 }
                 console.log('after updating the data', data)
             })
-
-        // axios.put(`http://localhost:3000/events/${_id}`, updatedEvent)
-        //     .then(res => {
-        //         console.log(res.data);
-        //         if (res.data.insertedId) {
-        //             Swal.fire({
-        //                 position: "center",
-        //                 icon: "success",
-        //                 title: "Your updated event successfully",
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             });
-        //             form.reset();
-        //             navigate('/manageEvents');
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
     }
     return (
         <div className='md:p-6'>

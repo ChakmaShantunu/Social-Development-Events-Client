@@ -35,16 +35,11 @@ const MyPostedEvents = ({ myPostedEvents }) => {
                             exit={{ opacity: 0, y: 30 }}
                             transition={{ duration: 0.3 }}
                         >
-                            {/* <EventCard event={event}></EventCard> */}
                             <PostedEventCard event={event}></PostedEventCard>
                         </motion.div>))
                     }
                 </AnimatePresence>
             </div>
-
-            {/* <div className='text-center my-8'>
-                <button onClick={() => setShowAll(prev => !prev)} className='btn btn-primary'>{showAll ? "Show Less" : "Show More"}</button>
-            </div> */}
         </motion.div>
     );
 };

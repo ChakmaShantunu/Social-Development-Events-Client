@@ -15,6 +15,14 @@ const Navbar = () => {
 
     const [theme, setTheme] = useState("light");
 
+    const handleToggle = e => {
+        const isChecked = e.target.checked
+        const newTheme = isChecked ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        setTheme(isChecked);
+    }
+
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === 'dark') {
@@ -25,13 +33,6 @@ const Navbar = () => {
             setTheme(false);
         }
     }, [])
-
-    const handleToggle = e => {
-        const newTheme = e.target.checked ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
-        setTheme(!theme);
-    }
 
     const handleSignOut = () => {
         signOutUser()
