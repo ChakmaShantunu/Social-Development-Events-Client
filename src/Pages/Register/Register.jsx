@@ -90,7 +90,7 @@ const Register = () => {
                             whileTap={{ scale: 0.95 }} className="btn btn-neutral mt-4">Register</motion.button>
                     </form>
                     <SocialLogIn></SocialLogIn>
-                    <p>Already have an account? Please <Link
+                    <p className='text-black'>Already have an account? Please <Link
                         className='underline' to='/signin'>Login</Link></p>
                 </div>
             </motion.div>
