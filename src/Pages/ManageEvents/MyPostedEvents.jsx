@@ -11,12 +11,8 @@ import Loading from '../../components/Loader/Loading';
 
 const MyPostedEvents = ({ email, accessToken }) => {
 
-    // const events = use(myPostedEvents);
-
-    const { loading } = useContext(AuthContext);
     const [events, setEvents] = useState([]);
 
-    // console.log(events);
 
     useEffect(() => {
         if (!email || !accessToken) return;
@@ -34,10 +30,6 @@ const MyPostedEvents = ({ email, accessToken }) => {
 
     }, [email, accessToken])
 
-
-    if (loading) {
-        return <Loading></Loading>
-    }
 
 
     return (

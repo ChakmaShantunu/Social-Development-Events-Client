@@ -24,16 +24,8 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, photo, password);
 
-        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
-        if (regex.test(password)) {
-            alert("valid password")
-        }
-        else {
-            alert("Password must contain at least one capital letter, one smaller and a number")
-        }
-
-        if (!name || !email || !password) {
+        if (!name || !email || !password || !photo) {
             alert("Please fill in all fields")
             return;
         }
@@ -42,6 +34,14 @@ const Register = () => {
             alert("Password must be at least 6 characters")
             return;
         }
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+        if (!regex.test(password)) {
+            alert("Password must contain at least one capital letter, one smaller and a number")
+            return;
+        }
+
 
         //create user
         createUser(email, password)

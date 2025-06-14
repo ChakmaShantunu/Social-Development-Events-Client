@@ -8,7 +8,7 @@ import Loading from '../../components/Loader/Loading';
 const EventsList = ({ email, accessToken }) => {
 
     // const events = use(myJoinedEventsPromise);
-    const { loading } = useContext(AuthContext);
+    // const { loading } = useContext(AuthContext);
 
     const [events, setEvents] = useState([]);
 
@@ -28,9 +28,9 @@ const EventsList = ({ email, accessToken }) => {
 
     }, [email, accessToken])
 
-    if (loading {
-        return <Loading></Loading>
-    })
+    // if (loading) {
+    //     return <Loading></Loading>
+    // }
 
     return (
         <div>
