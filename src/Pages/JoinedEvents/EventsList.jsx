@@ -1,10 +1,37 @@
 
-import React, { use } from 'react';
+import React, { use, useContext, useEffect, useState } from 'react';
 import { format } from 'date-fns';
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import { data } from 'react-router';
+import Loading from '../../components/Loader/Loading';
 
-const EventsList = ({ myJoinedEventsPromise }) => {
+const EventsList = ({ email, accessToken }) => {
 
-    const events = use(myJoinedEventsPromise);
+    // const events = use(myJoinedEventsPromise);
+    const { loading } = useContext(AuthContext);
+
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        if (!email || !accessToken) return;
+
+        fetch(`${import.meta.env.VITE_API_URL}/participants?email=${email}`, {
+            credentials: 'include',
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data);
+            })
+
+    }, [email, accessToken])
+
+    if (loading {
+        return <Loading></Loading>
+    })
+
     return (
         <div>
             <div className='my-6'>

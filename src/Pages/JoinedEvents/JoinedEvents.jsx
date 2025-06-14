@@ -14,7 +14,7 @@ const JoinedEvents = () => {
     const { user } = useContext(AuthContext);
     console.log(user.accessToken);
 
-    
+
     console.log(user.email);
     console.log(user.displayName);
 
@@ -25,7 +25,8 @@ const JoinedEvents = () => {
             transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}>
             <Suspense fallback={<Loading></Loading>}>
-                <EventsList myJoinedEventsPromise={myJoinedEventsPromise(user.email, user.accessToken)}></EventsList>
+                {/* <EventsList myJoinedEventsPromise={myJoinedEventsPromise(user.email, user.accessToken)}></EventsList> */}
+                <EventsList email={user.email} accessToken={user.accessToken}></EventsList>
             </Suspense>
         </motion.div>
     );

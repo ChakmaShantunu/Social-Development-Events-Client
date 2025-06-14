@@ -11,7 +11,8 @@ const ManageEvents = () => {
     return (
         <div>
             <Suspense fallback={<Loading></Loading>}>
-                <MyPostedEvents myPostedEvents={myPostedEvents(user.email, user.accessToken)}></MyPostedEvents>
+                {/* <MyPostedEvents myPostedEvents={myPostedEvents(user.email, user.accessToken)}></MyPostedEvents> */}
+                <MyPostedEvents email={user.email} accessToken={user.accessToken}></MyPostedEvents>
             </Suspense>
         </div>
     );

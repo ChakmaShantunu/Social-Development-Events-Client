@@ -1,16 +1,44 @@
 import { div } from 'framer-motion/client';
 import { format } from 'date-fns';
-import { use } from 'react';
+import { use, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { AnimatePresence, motion } from "framer-motion";
 import EventCard from '../Shared/EventCard';
 import PostedEventCard from './PostedEventCard';
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import Loading from '../../components/Loader/Loading';
 
 
-const MyPostedEvents = ({ myPostedEvents }) => {
+const MyPostedEvents = ({ email, accessToken }) => {
 
-    const events = use(myPostedEvents);
+    // const events = use(myPostedEvents);
+
+    const { loading } = useContext(AuthContext);
+    const [events, setEvents] = useState([]);
+
     // console.log(events);
+
+    useEffect(() => {
+        if (!email || !accessToken) return;
+
+        fetch(`${import.meta.env.VITE_API_URL}/created-events?email=${email}`, {
+            credentials: 'include',
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                setEvents(data);
+            })
+
+    }, [email, accessToken])
+
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
 
     return (
         <motion.div
