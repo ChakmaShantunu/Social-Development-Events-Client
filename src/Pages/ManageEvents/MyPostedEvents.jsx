@@ -1,6 +1,6 @@
 import { div } from 'framer-motion/client';
 import { format } from 'date-fns';
-import { use, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { AnimatePresence, motion } from "framer-motion";
 import EventCard from '../Shared/EventCard';
@@ -10,6 +10,8 @@ import Loading from '../../components/Loader/Loading';
 
 
 const MyPostedEvents = ({ email, accessToken }) => {
+
+    const { loading } = useContext(AuthContext);
 
     const [events, setEvents] = useState([]);
 
@@ -30,6 +32,9 @@ const MyPostedEvents = ({ email, accessToken }) => {
 
     }, [email, accessToken])
 
+    if (loading) {
+        return <Loading></Loading>
+    }
 
 
     return (
@@ -42,7 +47,7 @@ const MyPostedEvents = ({ email, accessToken }) => {
             {
                 events.length === 0 ? (<p className='text-3xl text-center mt-12 font-bold'>No Event found. You have not created any event yet.</p>) : (<div className='text-center space-y-4'>
                     <h1 className='text-6xl'>My Events</h1>
-                    <p>Explore today’s featured events and get involved in meaningful social development activities. Discover the events scheduled for today. Don’t miss out—stay updated and involved!</p>
+                    <p>Here are the events you’ve created. Stay engaged with your community by managing and promoting your social development events effectively.</p>
                 </div>)
             }
             <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 my-24 mx-auto md:mx-2 lg:mx-4'>
