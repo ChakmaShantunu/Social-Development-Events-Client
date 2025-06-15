@@ -11,11 +11,11 @@ const NewsLetter = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="bg-base-content rounded-box text-center my-24 py-20 flex flex-col md:flex-row lg:flex-row justify-around items-center mx-auto">
+            className="bg-neutral-content rounded-box text-center my-24 py-20 flex flex-col md:flex-row lg:flex-row justify-around items-center mx-auto">
             <div>
                 <Lottie animationData={newsletter1} loop={true} className='w-xs'></Lottie>
             </div>
-            <div className='bg-base-100 py-2 px-10 lg:py-12 lg:px-56 rounded-xl mb-12 md:mb-0 lg:mb-0'>
+            <div className='bg-base-300 py-2 px-10 lg:py-12 lg:px-56 rounded-xl mb-12 md:mb-0 lg:mb-0'>
                 <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-2">Subscribe to our Newsletter</h2>
                 <p className="my-4 text-sm">Get the latest updates right in your inbox.</p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-2">
