@@ -15,24 +15,29 @@ const Navbar = () => {
 
     const [theme, setTheme] = useState("light");
 
-    const handleToggle = e => {
-        const isChecked = e.target.checked
-        const newTheme = isChecked ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
-        setTheme(isChecked);
-    }
-
+    // প্রথমে ব্রাউজার প্রেফারেন্স + localStorage মিশিয়ে থিম সেট করবো
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === 'dark') {
-            document.documentElement.setAttribute("data-theme", 'dark');
-            setTheme(true);
+        if (savedTheme === "light" || savedTheme === "dark") {
+            setTheme(savedTheme);
+            document.documentElement.setAttribute("data-theme", savedTheme);
         } else {
-            document.documentElement.setAttribute("data-theme", 'light');
-            setTheme(false);
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const defaultTheme = prefersDark ? "dark" : "light";
+            setTheme(defaultTheme);
+            document.documentElement.setAttribute("data-theme", defaultTheme);
         }
-    }, [])
+    }, []);
+
+    // থিম টগল হ্যান্ডলার
+    const handleToggle = (e) => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+
 
     const handleSignOut = () => {
         signOutUser()
@@ -94,7 +99,7 @@ const Navbar = () => {
                         <path
                             d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
                     </svg>
-                    <input type="checkbox" className="toggle theme-controller" onChange={handleToggle} checked={theme} />
+                    <input type="checkbox" className="toggle theme-controller" onChange={handleToggle} checked={theme === 'dark'} />
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"

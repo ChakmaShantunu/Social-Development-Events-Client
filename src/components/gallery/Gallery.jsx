@@ -18,7 +18,7 @@ const Gallery = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, type: 'spring', stiffness: 80, damping: 10 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="py-6 dark:bg-gray-100 dark:text-gray-900 mt-24">
+            className="py-6 mt-24">
             <div className='space-y-4 mb-12'>
                 <h1 className='text-center text-5xl'>Glimpses of Memorable Moments</h1>
                 <p className="mt-2 text-center secondary-content max-w-5xl mx-auto">

@@ -12,7 +12,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        <section className="dark:bg-gray-100 dark:text-gray-800">
+        <section className="">
             <Swiper
                 modules={[Autoplay, Pagination, Navigation]}
                 autoplay={{ delay: 4000, disableOnInteraction: false }}

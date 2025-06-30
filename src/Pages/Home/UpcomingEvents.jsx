@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import Loading from '../../components/Loader/Loading';
 import { AnimatePresence, motion } from "motion/react"
 import { data } from 'react-router';
-import { filter } from 'framer-motion/client';
+import { filter, span } from 'framer-motion/client';
 
 const UpcomingEvents = () => {
 
@@ -102,7 +102,7 @@ const UpcomingEvents = () => {
                     <option value="Health">Health Camp</option>
                 </select>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12 mx-auto md:mx-2 lg:mx-4'>
+            <div className='min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[600px] grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12 mx-auto md:mx-2 lg:mx-4'>
                 <AnimatePresence>
                     {
                         displayEvents.map(event => (<motion.div key={event._id}
@@ -116,11 +116,20 @@ const UpcomingEvents = () => {
                         </motion.div>))
                     }
                 </AnimatePresence>
+                {
+                    displayEvents.length == 0 && <span className='text-center font-medium'>No upcoming events found. Try changing category or search terms.</span>
+                }
+
             </div>
 
-            <div className='text-center my-8'>
-                <button onClick={() => setShowAll(prev => !prev)} className='btn btn-primary'>{showAll ? "Show Less" : "Show More"}</button>
-            </div>
+
+            {
+                displayEvents.length > 0 && <>
+                    <div className='text-center my-8'>
+                        <button onClick={() => setShowAll(prev => !prev)} className='btn btn-primary'>{showAll ? "Show Less" : "Show More"}</button>
+                    </div>
+                </>
+            }
         </motion.div>
     );
 };
