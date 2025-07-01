@@ -11,10 +11,11 @@ const Footer = () => {
                     <Link to='/' className="btn btn-ghost text-xl hidden md:block lg:block">NoboUddog</Link>
                 </div>
                 <p>
-                    ACME Industries Ltd.
+                    NoboUddog Social Platform
                     <br />
-                    Providing reliable tech since 1992
+                    Connecting changemakers & communities since 2025
                 </p>
+
                 <nav>
                     <h6 className="footer-title">Social</h6>
                     <div className="grid grid-flow-col gap-4">
@@ -56,18 +57,20 @@ const Footer = () => {
             </aside>
             <nav>
                 <h6 className="footer-title">Services</h6>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <a className="link link-hover">Event Management</a>
+                <a className="link link-hover">Volunteer Coordination</a>
+                <a className="link link-hover">Fundraising Support</a>
+                <a className="link link-hover">Awareness Campaigns</a>
             </nav>
+
             <nav>
                 <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <a className="link link-hover">About Us</a>
+                <a className="link link-hover">Our Mission</a>
+                <a className="link link-hover">Partner Organizations</a>
+                <a className="link link-hover">Join as Volunteer</a>
             </nav>
+
             <nav>
                 <h6 className="footer-title">Legal</h6>
                 <a className="link link-hover">Terms of use</a>
