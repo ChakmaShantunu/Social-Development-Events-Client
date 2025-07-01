@@ -7,6 +7,7 @@ import Features from '../../components/features/Features';
 import Gallery from '../../components/gallery/Gallery';
 import NewsLetter from '../../components/newsLetter/NewsLetter';
 import Counter from '../../components/Counter/Counter';
+import HowItWorks from '../../components/HowItWorks/HowItWorks';
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Features></Features>
+            <HowItWorks></HowItWorks>
             <Gallery></Gallery>
             <NewsLetter></NewsLetter>
             <Counter></Counter>
