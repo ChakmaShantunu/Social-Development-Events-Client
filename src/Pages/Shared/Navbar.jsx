@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const [theme, setTheme] = useState("light");
 
-    // প্রথমে ব্রাউজার প্রেফারেন্স + localStorage মিশিয়ে থিম সেট করবো
+
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "light" || savedTheme === "dark") {
@@ -29,7 +29,7 @@ const Navbar = () => {
         }
     }, []);
 
-    // থিম টগল হ্যান্ডলার
+
     const handleToggle = (e) => {
         const newTheme = theme === "light" ? "dark" : "light";
         setTheme(newTheme);
@@ -58,12 +58,13 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {user && <li><NavLink to='/dashboard'></NavLink>Dashboard</li>}
         <li><NavLink to='/upcomingEvents'>Upcoming Events</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
         <li><NavLink to='/contact'>Contact</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100 shadow-xl w-full">
+        <div className="navbar bg-base-100 w-full">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
