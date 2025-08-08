@@ -57,7 +57,7 @@ const Navbar = () => {
     }
 
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Home</NavLink></li>
         {user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>}
         <li><NavLink to='/upcomingEvents'>Upcoming Events</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
@@ -77,7 +77,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <img className='hidden md:block lg:block' src={logo} alt="" />
-                <Link to='/' className="text-xl font-bold hidden md:block lg:block">NoboUddog</Link>
+                <Link to='/' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="text-xl font-bold hidden md:block lg:block">NoboUddog</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
