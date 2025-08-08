@@ -43,14 +43,14 @@ const AnimateCard = () => {
 
             </div>
             <div className="divider max-w-3xl mx-auto"><FaPaperPlane size={25} /></div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto gap-4 my-24 px-4 md:px-8'>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto gap-6 my-24 px-4 md:px-8'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
                                 <img
                                     src={feature1}
-                                    alt="Shoes"
+                                    alt="photo"
                                     className="rounded-xl w-full h-60 object-cover" />
                             </figure>
                             <div className="card-body items-center text-center space-y-4">
@@ -65,7 +65,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
@@ -86,7 +86,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
@@ -107,7 +107,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
@@ -128,7 +128,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
@@ -149,7 +149,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
@@ -170,7 +170,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
@@ -191,7 +191,7 @@ const AnimateCard = () => {
                             style={{ background: rotatingBg, filter: 'blur(2px)', opacity: 1 }}></motion.div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300'>
+                <div className='flex items-center justify-center cursor-pointer hover:scale-100 transition-transform duration-300'>
                     <div className='relative'>
                         <div className="card bg-base-100 w-96 shadow-sm relative z-10">
                             <figure className="px-10 pt-10">
