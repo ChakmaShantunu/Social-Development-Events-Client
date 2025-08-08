@@ -4,6 +4,7 @@ import banner from '../../assets/Banner/banner.jpg'
 import banner2 from '../../assets/Banner/banner2.jpg'
 import banner3 from '../../assets/Banner/banner3.jpg'
 import banner4 from '../../assets/Banner/banner4.jpg'
+import banner5 from '../../assets/Banner/banner5.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -49,12 +50,12 @@ const Banner = () => {
                                     className="btn btn-outline px-8 py-3">Join Event</motion.button>
                             </div>
                         </div>
-                        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:w-[60%]xl:h-112 2xl:h-128">
                             <motion.img
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ duration: 1, ease: easeInOut, type: 'spring', stiffness: 80, damping: 10 }}
-                                src={banner} alt="" className="object-contain rounded-2xl h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                                src={banner} alt="" className="object-cover rounded-2xl h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                         </div>
                     </div>
                 </SwiperSlide>
@@ -87,12 +88,12 @@ const Banner = () => {
                                     className="btn btn-outline px-8 py-3">Join Event</motion.button>
                             </div>
                         </div>
-                        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:w-[60%]xl:h-112 2xl:h-128">
                             <motion.img
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ duration: 1, ease: easeInOut, type: 'spring', stiffness: 80, damping: 10 }}
-                                src={banner2} alt="" className="object-contain rounded-2xl h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                                src={banner5} alt="" className="object-cover rounded-2xl h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                         </div>
                     </div>
                 </SwiperSlide>

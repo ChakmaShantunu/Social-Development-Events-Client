@@ -3,7 +3,6 @@ import EventsStat from './EventsStat';
 import EventsList from './EventsList';
 import { Suspense, use, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
-import { myJoinedEventsPromise } from '../../api/joinedEventsApi';
 import Loading from '../../components/Loader/Loading';
 import { AnimatePresence, motion } from "motion/react"
 

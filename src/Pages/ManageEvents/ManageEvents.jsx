@@ -1,7 +1,6 @@
 import React, { Suspense, use } from 'react';
 import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
 import MyPostedEvents from './MyPostedEvents';
-import { myPostedEvents } from '../../api/postedEventsApi';
 import Loading from '../../components/Loader/Loading';
 
 const ManageEvents = () => {
