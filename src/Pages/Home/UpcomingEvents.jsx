@@ -102,7 +102,7 @@ const UpcomingEvents = () => {
                     <option value="Health">Health Camp</option>
                 </select>
             </div>
-            <div className='min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[600px] grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12 mx-auto md:mx-2 lg:mx-4'>
+            <div className='min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mb-24 mt-12 mx-auto md:mx-2 lg:mx-4'>
                 <AnimatePresence>
                     {
                         displayEvents.map(event => (<motion.div key={event._id}
