@@ -18,8 +18,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Live Site URL : https://social-event-platform-8f1fd.web.app
 ## Live server URL: https://assignment-eleven-social-event-serv.vercel.app
-## Git repository Client: https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-shantunu007
-## Git repository Server: https://github.com/Programming-Hero-Web-Course4/b11a11-server-side-shantunu007
+
 
 
 
