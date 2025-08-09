@@ -18,12 +18,12 @@ const AddShare = () => {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
-        const newEvent = Object.fromEntries(formData.entries());
+        const newExperience = Object.fromEntries(formData.entries());
 
-        newEvent.eventDate = startDate.toISOString();
-        console.log(newEvent);
+        newExperience.eventDate = startDate.toISOString();
+        console.log(newExperience);
 
-        axios.post(`${import.meta.env.VITE_API_URL}/events`, newEvent, {
+        axios.post(`${import.meta.env.VITE_API_URL}/experience`, newExperience, {
             withCredentials: true
         })
             .then(res => {
