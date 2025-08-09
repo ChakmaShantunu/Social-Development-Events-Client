@@ -1,6 +1,7 @@
 import React from 'react';
 import error from '../../assets/lotties/error.json'
 import Lottie from 'lottie-react';
+import { Link } from 'react-router';
 
 const NotFound = () => {
     return (
@@ -12,6 +13,7 @@ const NotFound = () => {
                     <p className="mb-5">
                         The page you're looking for doesn't exist or has been moved.
                     </p>
+                    <Link to="/"><button className='btn'>Back to Home</button></Link>
                 </div>
             </div>
         </div>

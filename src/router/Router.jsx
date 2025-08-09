@@ -22,6 +22,7 @@ import CookiePolicy from "../Pages/Footer/CookiePolicy";
 import AwarenessCampaigns from "../Pages/Footer/AwarenessCampaigns";
 import FundraisingSupport from "../Pages/Footer/FundraisingSupport";
 import VolunteerCoordination from "../Pages/Footer/VolunteerCoordination";
+import AddShare from "../Pages/AddShare/AddShare";
 
 export const router = createBrowserRouter([
     {
@@ -110,6 +111,10 @@ export const router = createBrowserRouter([
             {
                 path: 'volunteerCoordination',
                 Component: VolunteerCoordination
+            },
+            {
+                path: '/addShare',
+                Component: AddShare
             }
         ]
     },

@@ -1,13 +1,12 @@
-import React, { use, useState } from 'react';
-import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
-import DatePicker from 'react-datepicker';
-import { object } from 'framer-motion/client';
 import axios from 'axios';
-import Swal from 'sweetalert2';
+import React, { use, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { AuthContext } from '../../contexts/AuthContexts/AuthContext';
+import Swal from 'sweetalert2';
 import { motion } from "motion/react"
+import DatePicker from 'react-datepicker';
 
-const AddEvent = () => {
+const AddShare = () => {
 
     const navigate = useNavigate();
 
@@ -45,8 +44,6 @@ const AddEvent = () => {
                 console.log(error);
             })
     }
-
-
     return (
         <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -55,8 +52,8 @@ const AddEvent = () => {
             viewport={{ once: true, amount: 0.2 }}
             className='md:p-6'>
             <div className='p-12 text-center space-y-4'>
-                <h1 className='text-2xl md:text-4xl lg:text-6xl'>Add new event</h1>
-                <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                <h1 className='text-2xl md:text-4xl lg:text-6xl'>Add Your Experience</h1>
+                {/* <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p> */}
             </div>
             <form onSubmit={handleAddEvent}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -83,18 +80,18 @@ const AddEvent = () => {
                         {/* <input type="date" name='eventDate' className="input w-full" placeholder="Enter coffee taste" /> */}
                         <DatePicker className='px-4 py-3 border border-gray-300 rounded' minDate={new Date()} selected={startDate} onChange={(date) => setStartDate(date)} />
                     </fieldset>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
+                    {/* <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label text-base-content font-semibold">Image</label>
                         <input type="url" name='thumbnailUrl' className="input w-full" placeholder="Enter Event Image" />
-                    </fieldset>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
+                    </fieldset> */}
+                    {/* <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label text-base-content font-semibold">Location</label>
                         <input type="text" name='location' className="input w-full" placeholder="Enter Event Location" />
-                    </fieldset>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
+                    </fieldset> */}
+                    {/* <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label text-base-content font-semibold">Max Participants</label>
                         <input type="text" name='maxParticipants' className="input w-full" placeholder="Enter Max Participants" />
-                    </fieldset>
+                    </fieldset> */}
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label text-base-content font-semibold">Name</label>
                         <input type="text" name='name' className="input w-full" defaultValue={user?.displayName} placeholder="Enter coffee details" readOnly />
@@ -104,10 +101,10 @@ const AddEvent = () => {
                         <input type="email" name='email' className="input w-full" defaultValue={user?.email} placeholder="Enter coffee details" readOnly />
                     </fieldset>
                 </div>
-                <input type="submit" className='btn w-full mt-12' value="Add Event" />
+                <input type="submit" className='btn w-full mt-12' value="Add Experience" />
             </form>
         </motion.div>
     );
 };
 
-export default AddEvent;
+export default AddShare;
