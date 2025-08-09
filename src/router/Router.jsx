@@ -23,6 +23,9 @@ import AwarenessCampaigns from "../Pages/Footer/AwarenessCampaigns";
 import FundraisingSupport from "../Pages/Footer/FundraisingSupport";
 import VolunteerCoordination from "../Pages/Footer/VolunteerCoordination";
 import AddShare from "../Pages/AddShare/AddShare";
+import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
+import TotalEventsCard from "../Pages/Dashboard/DashboardHome/TotalEventsCard";
 
 export const router = createBrowserRouter([
     {
@@ -121,5 +124,19 @@ export const router = createBrowserRouter([
     {
         path: '*',
         Component: NotFound
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children: [
+            {
+                index: true,
+                Component: DashboardHome
+            },
+            {
+                path: 'totalEventsCard',
+                Component: TotalEventsCard
+            }
+        ]
     }
 ])
