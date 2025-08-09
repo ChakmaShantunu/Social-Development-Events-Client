@@ -87,7 +87,7 @@ const Register = () => {
 
                         <motion.button
                             whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }} className="btn btn-neutral mt-4">Register</motion.button>
+                            whileTap={{ scale: 0.95 }} className="btn btn-primary mt-4">Register</motion.button>
                     </form>
                     <SocialLogIn></SocialLogIn>
                     <p className='text-black'>Already have an account? Please <Link

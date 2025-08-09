@@ -70,7 +70,8 @@ const SignIn = () => {
                         <label className="label text-black">Password</label>
                         <input type="password" name='password' className="input" placeholder="Password" />
                         <div><button className="link link-hover text-black">Forgot password?</button></div>
-                        <button type='submit' className="btn btn-neutral mt-4">Login</button>
+                        <motion.button whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }} type='submit' className="btn btn-primary mt-4">Login</motion.button>
                     </form>
                     <p className='text-black'>New to this website? Please <Link className='underline' to='/register'>Register</Link></p>
                     <SocialLogIn from={from}></SocialLogIn>

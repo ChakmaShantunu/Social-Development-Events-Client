@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUserPlus, FaSearch, FaRegCalendarCheck } from 'react-icons/fa';
+import { FaUserPlus, FaSearch, FaRegCalendarCheck, FaShareAlt } from 'react-icons/fa';
 
 const steps = [
     {
@@ -17,7 +17,13 @@ const steps = [
         title: "Join & Participate",
         description: "Register for events, join discussions, and grow your skills.",
     },
+    {
+        icon: <FaShareAlt className="text-4xl text-primary mb-4" />,
+        title: "Share Your Experience",
+        description: "Post about your learnings and inspire others in the community.",
+    },
 ];
+
 
 const HowItWorks = () => {
     return (
@@ -27,7 +33,7 @@ const HowItWorks = () => {
                 <p className="">Follow these simple steps to get started</p>
             </div>
 
-            <div className="max-w-6xl mx-auto grid gap-10 px-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid gap-10 p-6 sm:grid-cols-2 lg:grid-cols-4">
                 {steps.map((step, index) => (
                     <div
                         key={index}
