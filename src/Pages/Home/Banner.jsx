@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Link } from 'react-router';
 
 const Banner = () => {
     return (
@@ -39,15 +40,15 @@ const Banner = () => {
                                 <br className="hidden md:inline lg:hidden" />From local cleanups to global campaigns — your impact starts here
                             </motion.p>
                             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                                <motion.button
+                                <Link to="/register"><motion.button
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="btn btn-primary px-8 py-3">Get Started</motion.button>
+                                    className="btn btn-primary px-8 py-3">Get Started</motion.button></Link>
 
-                                <motion.button
+                                <Link to="/upcomingEvents"><motion.button
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="btn btn-outline px-8 py-3">Join Event</motion.button>
+                                    className="btn btn-outline px-8 py-3">Join Event</motion.button></Link>
                             </div>
                         </div>
                         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:w-[60%]xl:h-112 2xl:h-128">

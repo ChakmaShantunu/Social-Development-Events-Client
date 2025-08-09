@@ -15,6 +15,13 @@ import UpdateEvent from "../Pages/ManageEvents/UpdateEvent";
 import NotFound from "../Pages/NotFound/NotFound";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import PartnerOrganizations from "../Pages/Footer/PartnerOrganizations";
+import TermsOfUse from "../Pages/Footer/TermsOfUse";
+import PrivacyPolicy from "../Pages/Footer/PrivacyPolicy";
+import CookiePolicy from "../Pages/Footer/CookiePolicy";
+import AwarenessCampaigns from "../Pages/Footer/AwarenessCampaigns";
+import FundraisingSupport from "../Pages/Footer/FundraisingSupport";
+import VolunteerCoordination from "../Pages/Footer/VolunteerCoordination";
 
 export const router = createBrowserRouter([
     {
@@ -75,6 +82,34 @@ export const router = createBrowserRouter([
             {
                 path: '/signin',
                 Component: SignIn
+            },
+            {
+                path: 'partnerOrganizations',
+                Component: PartnerOrganizations
+            },
+            {
+                path: 'termsOfUse',
+                Component: TermsOfUse
+            },
+            {
+                path: 'privacyPolicy',
+                Component: PrivacyPolicy
+            },
+            {
+                path: 'cookiePolicy',
+                Component: CookiePolicy
+            },
+            {
+                path: 'awarenessCampaigns',
+                Component: AwarenessCampaigns
+            },
+            {
+                path: 'fundraisingSupport',
+                Component: FundraisingSupport
+            },
+            {
+                path: 'volunteerCoordination',
+                Component: VolunteerCoordination
             }
         ]
     },

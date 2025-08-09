@@ -57,25 +57,26 @@ const Footer = () => {
             </aside>
             <nav>
                 <h6 className="footer-title">Services</h6>
-                <a className="link link-hover">Event Management</a>
-                <a className="link link-hover">Volunteer Coordination</a>
-                <a className="link link-hover">Fundraising Support</a>
-                <a className="link link-hover">Awareness Campaigns</a>
+                <Link to="manageEvents" className='link-hover'>Event Management</Link>
+                <Link to="awarenessCampaigns" className='link-hover'>Awareness Campaigns</Link>
+                <Link to="fundraisingSupport" className='link-hover'>Fundraising Support</Link>
+                <Link to="volunteerCoordination" className='link-hover'>Volunteer Coordination</Link>
             </nav>
 
             <nav>
                 <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About Us</a>
-                <a className="link link-hover">Our Mission</a>
-                <a className="link link-hover">Partner Organizations</a>
-                <a className="link link-hover">Join as Volunteer</a>
+                <Link to="about" className='link-hover'>About Us</Link>
+                <Link to="about" className='link-hover'>Our Mission</Link>
+                <Link to="partnerOrganizations" className='link-hover'>Partner Organizations</Link>
+                <Link to="register" className='link-hover'>Join as a Volunteer</Link>
+
             </nav>
 
             <nav>
                 <h6 className="footer-title">Legal</h6>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <Link to="termsOfUse" className='link-hover'>Terms of use</Link>
+                <Link to="privacyPolicy" className='link-hover'>Privacy policy</Link>
+                <Link to="cookiePolicy" className='link-hover'>Cookie policy</Link>
             </nav>
         </footer>
     );
