@@ -115,7 +115,7 @@ const DashboardHome = () => {
     };
 
     return (
-        <div className='space-y-6'>
+        <div data-aos="zoom-in-up" className='space-y-6'>
             <div className='flex justify-end items-center gap-4'>
                 <label className="swap swap-rotate">
                     {/* this hidden checkbox controls the state */}
@@ -163,7 +163,7 @@ const DashboardHome = () => {
             </div>
 
             {/* Chart Section */}
-            <div className='mt-8 p-6 border border-gray-300 rounded-lg shadow-md bg-base-100'>
+            <div className='mt-8 p-6 border border-gray-300 rounded-lg shadow-md bg-base-100 w-full'>
                 <Bar options={options} data={data} />
             </div>
         </div>
