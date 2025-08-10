@@ -14,7 +14,10 @@ const UpcomingEvents = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [searchTitle, setSearchTitle] = useState("");
     const [inputText, setInputText] = useState('');
-    const [showAll, setShowAll] = useState(false);
+    // const [showAll, setShowAll] = useState(false);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8;
 
     useEffect(() => {
 
@@ -51,10 +54,19 @@ const UpcomingEvents = () => {
             })
 
     }, [selectedCategory, searchTitle])
-    const displayEvents = showAll ? events : events.slice(0, 8);
+    // const displayEvents = showAll ? events : events.slice(0, 8);
 
     if (loading) {
         return <Loading></Loading>
+    }
+
+    const totalPages = Math.ceil(events.length / itemsPerPage);
+    const lastPageEvents = currentPage * itemsPerPage;
+    const firstPageEvents = lastPageEvents - itemsPerPage;
+    const currentEvents = events.slice(firstPageEvents, lastPageEvents);
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber)
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     return (
@@ -105,7 +117,7 @@ const UpcomingEvents = () => {
             <div className='min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[600px] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 mb-24 mt-12 mx-auto md:mx-2 lg:mx-4'>
                 <AnimatePresence>
                     {
-                        displayEvents.map(event => (<motion.div key={event._id}
+                        currentEvents.map(event => (<motion.div key={event._id}
                             layout
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -116,20 +128,26 @@ const UpcomingEvents = () => {
                         </motion.div>))
                     }
                 </AnimatePresence>
-                {
+                {/* {
                     displayEvents.length == 0 && <span className='text-center font-medium'>No upcoming events found. Try changing category or search terms.</span>
-                }
+                } */}
 
             </div>
 
-
-            {
-                displayEvents.length > 0 && <>
-                    <div className='text-center my-8'>
-                        <button onClick={() => setShowAll(prev => !prev)} className='btn btn-primary'>{showAll ? "Show Less" : "Show More"}</button>
-                    </div>
-                </>
-            }
+            {/* Pagination Buttons */}
+            {totalPages > 1 && (
+                <div className="flex justify-center mb-12 space-x-2">
+                    {Array.from({ length: totalPages }, (_, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => paginate(idx + 1)}
+                            className={`btn ${currentPage === idx + 1 ? 'btn-primary' : ''}`}
+                        >
+                            {idx + 1}
+                        </button>
+                    ))}
+                </div>
+            )}
         </motion.div>
     );
 };
