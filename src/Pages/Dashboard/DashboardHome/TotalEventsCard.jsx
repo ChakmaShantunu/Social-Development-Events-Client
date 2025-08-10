@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const TotalEventsCard = ({ total = 0 }) => {
+const TotalEventsCard = ({ total = 5 }) => {
     return (
         <Link
             to="/dashboard"
