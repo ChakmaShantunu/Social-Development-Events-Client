@@ -17,19 +17,19 @@ const About = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                     <div className="bg-base-100 shadow-lg rounded-2xl p-8 hover:shadow-xl transition duration-300">
-                        <h3 className="text-2xl font-semibold text-primary mb-3">🌱 Our Mission</h3>
+                        <h3 className="text-2xl font-semibold mb-3">🌱 Our Mission</h3>
                         <p className="">
                             Empower local communities to create and participate in events that bring positive change to society.
                         </p>
                     </div>
                     <div className="bg-base-100 shadow-lg rounded-2xl p-8 hover:shadow-xl transition duration-300">
-                        <h3 className="text-2xl font-semibold text-primary mb-3">🚀 Our Vision</h3>
+                        <h3 className="text-2xl font-semibold mb-3">🚀 Our Vision</h3>
                         <p className="">
                             Build a future where collaboration through events creates a more aware, united, and impactful world.
                         </p>
                     </div>
                     <div className="bg-base-100 shadow-lg rounded-2xl p-8 hover:shadow-xl transition duration-300">
-                        <h3 className="text-2xl font-semibold text-primary mb-3">💡 Core Values</h3>
+                        <h3 className="text-2xl font-semibold mb-3">💡 Core Values</h3>
                         <ul className="">
                             <li>Inclusivity</li>
                             <li>Transparency</li>
