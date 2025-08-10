@@ -14,7 +14,7 @@ const UpcomingEvents = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [searchTitle, setSearchTitle] = useState("");
     const [inputText, setInputText] = useState('');
-    // const [showAll, setShowAll] = useState(false);
+    const [showAll, setShowAll] = useState(false);
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
@@ -54,7 +54,7 @@ const UpcomingEvents = () => {
             })
 
     }, [selectedCategory, searchTitle])
-    // const displayEvents = showAll ? events : events.slice(0, 8);
+    // const currentEvents = showAll ? events : events.slice(0, 8);
 
     if (loading) {
         return <Loading></Loading>
@@ -64,10 +64,12 @@ const UpcomingEvents = () => {
     const lastPageEvents = currentPage * itemsPerPage;
     const firstPageEvents = lastPageEvents - itemsPerPage;
     const currentEvents = events.slice(firstPageEvents, lastPageEvents);
+
     const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber)
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+        setCurrentPage(pageNumber);
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // scroll to top on page change (optional)
+    };
+
 
     return (
         <motion.div
@@ -128,11 +130,12 @@ const UpcomingEvents = () => {
                         </motion.div>))
                     }
                 </AnimatePresence>
-                {/* {
-                    displayEvents.length == 0 && <span className='text-center font-medium'>No upcoming events found. Try changing category or search terms.</span>
-                } */}
+                {
+                    currentEvents.length == 0 && <span className='text-center font-medium'>No upcoming events found. Try changing category or search terms.</span>
+                }
 
             </div>
+
 
             {/* Pagination Buttons */}
             {totalPages > 1 && (
